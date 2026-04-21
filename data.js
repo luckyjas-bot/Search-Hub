@@ -49,7 +49,7 @@ const BRANDS_DATA = [
         youtube: "https://www.youtube.com/@zenithwatches/videos",
         linkedin: "https://www.linkedin.com/company/zenithwatches/",
         weibo: "https://weibo.com/u/2116791882",
-        Red: "https://www.xiaohongshu.com/user/profile/5e68a15900000000010076ad"
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5e68a15900000000010076ad"
     },
         {
         name: "Vacheron Constantin",
