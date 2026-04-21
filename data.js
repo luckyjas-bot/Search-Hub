@@ -43,8 +43,13 @@ const BRANDS_DATA = [
         client: ["LVMH", "Richemont"],        // 所属客户
         owner: ["Danyu"],      // 负责人
         instagram: "https://www.instagram.com/zenithwatches/",
+        facebook: "https://www.facebook.com/ZenithWatches/",
+        tiktok: "https://www.tiktok.com/@zenithwatches?lang=en",
+        twitter: "https://x.com/ZenithWatches",
+        youtube: "https://www.youtube.com/@zenithwatches/videos",
         linkedin: "https://www.linkedin.com/company/zenithwatches/",
-        weibo: "https://weibo.com/u/2116791882"
+        weibo: "https://weibo.com/u/2116791882",
+        Red: "https://www.xiaohongshu.com/user/profile/5e68a15900000000010076ad"
     },
         {
         name: "Vacheron Constantin",
