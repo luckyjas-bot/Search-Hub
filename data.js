@@ -40,7 +40,15 @@ const BRANDS_DATA = [
     },
     {
         name: "Zenith",
-        client: ["LVMH"],        // 所属客户
+        client: ["LVMH", "Richemont"],        // 所属客户
+        owner: ["Danyu"],      // 负责人
+        instagram: "https://www.instagram.com/zenithwatches/",
+        linkedin: "https://www.linkedin.com/company/zenithwatches/",
+        weibo: "https://weibo.com/u/2116791882"
+    },
+        {
+        name: "Vacheron Constantin",
+        client: ["LVMH", "Richemont"],        // 所属客户
         owner: ["Danyu"],      // 负责人
         instagram: "https://www.instagram.com/zenithwatches/",
         linkedin: "https://www.linkedin.com/company/zenithwatches/",
