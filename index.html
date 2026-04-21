@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Hub 2.0 - Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 方案二：柔和冰蓝渐变背景 */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #f1f5f9 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        .search-section { text-align: center; margin-bottom: 40px; }
+        
+        #ui-title {
+            color: #1d1d1f;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap; /* 适配手机屏幕 */
+        }
+
+        /* 输入框和下拉框的统一苹果风格 */
+        #searchInput, select {
+            padding: 12px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            outline: none;
+            font-size: 14px;
+            color: #1d1d1f;
+        }
+
+        #searchInput { width: 300px; }
+
+        .brand-container {
+            background: white;
+            width: 90%;
+            max-width: 850px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            padding: 22px 30px;
+            border-bottom: 1px solid #f2f2f7;
+            transition: background 0.2s;
+        }
+
+        .brand-row:hover { background: #f9f9fb; }
+        .brand-name { flex: 1; font-weight: 600; font-size: 1.1em; color: #1d1d1f; }
+        
+        /* 辅助信息（Client）的样式 */
+        .client-tag {
+            font-size: 11px;
+            color: #8e8e93;
+            margin-left: 12px;
+            font-weight: 400;
+        }
+
+        .social-icons { display: flex; gap: 18px; }
+        .social-icons a { font-size: 24px; text-decoration: none; transition: transform 0.2s; }
+        .social-icons a:hover { transform: scale(1.15); }
+        .fa-instagram { color: #E4405F; }
+        .fa-linkedin { color: #0A66C2; }
+        .fa-weibo { color: #E6162D; }
+    </style>
+</head>
+<body>
+
+    <div class="search-section">
+        <h1 id="ui-title">SEARCH FILTER</h1>
+        
+        <div class="filter-group">
+            <input type="text" id="searchInput" placeholder="Search brands..." onkeyup="renderBrands()">
+            
+            <select id="ownerFilter" onchange="renderBrands()">
+                <option value="">All Owners</option>
+            </select>
+
+            <select id="clientFilter" onchange="renderBrands()">
+                <option value="">All Clients</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="brand-container" id="brandList"></div>
+
+    <script src="data.js"></script>
+
+    <script>
+        // 1. 自动从 data.js 中提取所有的 Owner 和 Client 并填入下拉菜单
+        function populateFilters() {
+            const owners = new Set();
+            const clients = new Set();
+
+            if (typeof BRANDS_DATA !== 'undefined') {
+                BRANDS_DATA.forEach(brand => {
+                    // 处理 Owner (数组或字符串)
+                    if (Array.isArray(brand.owner)) brand.owner.forEach(o => owners.add(o));
+                    else if (brand.owner) owners.add(brand.owner);
+                    
+                    // 处理 Client (数组或字符串)
+                    if (Array.isArray(brand.client)) brand.client.forEach(c => clients.add(c));
+                    else if (brand.client) clients.add(brand.client);
+                });
+            }
+
+            const ownerSelect = document.getElementById('ownerFilter');
+            const clientSelect = document.getElementById('clientFilter');
+
+            // 排序并生成选项
+            Array.from(owners).sort().forEach(o => {
+                const opt = document.createElement('option');
+                opt.value = o;
+                opt.innerText = o;
+                ownerSelect.appendChild(opt);
+            });
+
+            Array.from(clients).sort().forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c;
+                opt.innerText = c;
+                clientSelect.appendChild(opt);
+            });
+        }
+
+        // 2. 核心渲染函数：同时处理 搜索词、Owner、Client
+        function renderBrands() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedOwner = document.getElementById('ownerFilter').value;
+            const selectedClient = document.getElementById('clientFilter').value;
+            const listContainer = document.getElementById('brandList');
+            
+            listContainer.innerHTML = '';
+
+            if (typeof BRANDS_DATA !== 'undefined') {
+                BRANDS_DATA.forEach(brand => {
+                    // 逻辑判断
+                    const matchSearch = brand.name.toLowerCase().includes(searchTerm);
+                    const matchOwner = selectedOwner === "" || 
+                                      (Array.isArray(brand.owner) ? brand.owner.includes(selectedOwner) : brand.owner === selectedOwner);
+                    const matchClient = selectedClient === "" || 
+                                       (Array.isArray(brand.client) ? brand.client.includes(selectedClient) : brand.client === selectedClient);
+
+                    if (matchSearch && matchOwner && matchClient) {
+                        const row = document.createElement('div');
+                        row.className = 'brand-row';
+                        
+                        // 只显示 Client 标签，不显示 Owner
+                        const displayClient = Array.isArray(brand.client) ? brand.client.join(' / ') : brand.client;
+
+                        row.innerHTML = `
+                            <div class="brand-name">
+                                ${brand.name}
+                                <span class="client-tag">${displayClient || ''}</span>
+                            </div>
+                            <div class="social-icons">
+                                <a href="${brand.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="${brand.linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="${brand.weibo}" target="_blank"><i class="fab fa-weibo"></i></a>
+                            </div>
+                        `;
+                        listContainer.appendChild(row);
+                    }
+                });
+            }
+        }
+
+        // 3. 页面启动初始化
+        window.onload = function() {
+            populateFilters(); // 生成下拉框
+            renderBrands();    // 显示品牌列表
+        };
+    </script>
+</body>
+</html>
