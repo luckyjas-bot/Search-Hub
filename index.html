@@ -5,7 +5,7 @@
     <title>Search Hub 2.0 - Professional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 方案二：柔和冰蓝渐变背景 */
+        /* 蓝色背景 */
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -34,7 +34,7 @@
             flex-wrap: wrap; /* 适配手机屏幕 */
         }
 
-        /* 输入框和下拉框的统一苹果风格 */
+        /* 输入框和下拉框 */
         #searchInput, select {
             padding: 12px 20px;
             border-radius: 20px;
@@ -76,12 +76,25 @@
             font-weight: 400;
         }
 
-        .social-icons { display: flex; gap: 18px; }
-        .social-icons a { font-size: 24px; text-decoration: none; transition: transform 0.2s; }
-        .social-icons a:hover { transform: scale(1.15); }
-        .fa-instagram { color: #E4405F; }
-        .fa-linkedin { color: #0A66C2; }
-        .fa-weibo { color: #E6162D; }
+        /* 修改图标容器 */
+        .social-icons {
+            display: flex;
+            gap: 15px; /* 图标之间的间距 */
+            align-items: center;
+        }
+
+        /* 定义官方图标的大小 */
+        .social-icon-img {
+            width: 24px;  /* 你可以根据喜好调整大小 */
+            height: 24px;
+            object-fit: contain; /* 确保图标比例不失真 */
+            transition: transform 0.2s ease;
+        }
+
+        .social-icon-img:hover {
+            transform: scale(1.2); /* 鼠标悬停时稍微放大 */
+        }
+
     </style>
 </head>
 <body>
@@ -174,9 +187,10 @@
                                 <span class="client-tag">${displayClient || ''}</span>
                             </div>
                             <div class="social-icons">
-                                <a href="${brand.instagram}" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a href="${brand.linkedin}" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                <a href="${brand.weibo}" target="_blank"><i class="fab fa-weibo"></i></a>
+                                ${brand.instagram ? `<a href="${brand.instagram}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" class="social-icon-img"></a>` : ''}
+                                ${brand.linkedin ? `<a href="${brand.linkedin}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" class="social-icon-img"></a>` : ''}
+                                ${brand.weibo ? `<a href="${brand.weibo}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Sina_Weibo_mini_logo.svg" class="social-icon-img"></a>` : ''}
+                                ${brand.youtube ? `<a href="${brand.youtube}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg" class="social-icon-img"></a>` : ''}
                             </div>
                         `;
                         listContainer.appendChild(row);
