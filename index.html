@@ -58,12 +58,9 @@
         }
 
         .brand-row {
-            display: flex;
-            justify-content: space-between; /* 名字在一头，图标在中间/另一头 */
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr; /* 分成三列：名字 | 图标 | 空位 */
             align-items: center;
-            padding: 15px 25px;
-            border-bottom: 1px solid #f2f2f7;
-            transition: background 0.2s;
         }
 
         .brand-row:hover { background: #f9f9fb; }
