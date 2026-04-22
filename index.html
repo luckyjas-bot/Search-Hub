@@ -59,14 +59,15 @@
 
         .brand-row {
             display: flex;
+            justify-content: space-between; /* 名字在一头，图标在中间/另一头 */
             align-items: center;
-            padding: 22px 30px;
+            padding: 15px 25px;
             border-bottom: 1px solid #f2f2f7;
             transition: background 0.2s;
         }
 
         .brand-row:hover { background: #f9f9fb; }
-        .brand-name { flex: 1; font-weight: 600; font-size: 1.1em; color: #1d1d1f; }
+        .brand-name { flex: 1; font-weight: 600; min-width: 150px; font-size: 1.1em; color: #1d1d1f; }
         
         /* 辅助信息（Client）的样式 */
         .client-tag {
@@ -79,14 +80,16 @@
         /* 修改图标容器 */
         .social-icons {
             display: flex;
-            gap: 15px; /* 图标之间的间距 */
+            gap: 20px; /* 图标之间的间距 */
             align-items: center;
+            justify-content: center; /* 关键：让图标水平居中 */
+            flex: 1;             /* 让它占据中间剩余空间 */
         }
 
         /* 定义官方图标的大小 */
         .social-icon-img {
-            width: 24px;  /* 你可以根据喜好调整大小 */
-            height: 24px;
+            width: 32px;  /* 你可以根据喜好调整大小 */
+            height: 32px;
             object-fit: contain; /* 确保图标比例不失真 */
             transition: transform 0.2s ease;
         }
@@ -184,7 +187,6 @@
                         row.innerHTML = `
                             <div class="brand-name">
                                 ${brand.name}
-                                <span class="client-tag">${displayClient || ''}</span>
                             </div>
                             <div class="social-icons">
                                 ${brand.instagram ? `<a href="${brand.instagram}" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" class="social-icon-img"></a>` : ''}
