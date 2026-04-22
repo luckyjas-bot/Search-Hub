@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Hub 2.0 - Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(105deg, #051c44 0%, #0a2b5e 40%, #4a3f5d 70%, #b87a3d 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Montserrat', -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            box-sizing: border-box;        
+        }
+
+        #ui-title {
+            color: white;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+
+        .search-section { text-align: center; margin-bottom: 40px; }
+        
+        .filter-group select {
+            /* 1. 清除浏览器默认的下拉箭头 */
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            /* 2. 右侧(40px)要留够，否则文字会和新箭头重叠 */
+            padding: 12px 40px 12px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(0,0,0,0.05);
+            background: white;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            outline: none;
+
+            /* 3. 使用 SVG 自定义箭头图标 */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            
+            /* 4. right 20px 表示距离右边框 20 像素 */
+            background-position: right 20px center; 
+            background-size: 12px;
+        }
+
+        /* 兼容 IE 的小细节 */
+        .filter-group select::-ms-expand {
+            display: none;
+        }
+
+        #searchInput, select {
+            font-family: 'Montserrat', sans-serif;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(0,0,0,0.05);
+            background: white;
+            outline: none;
+            font-size: 14px;
+        }
+
+        #searchInput { width: 300px; }
+
+        .brand-container {
+            background: white;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            overflow: visible; /* 必须是 visible 否则弹出菜单会被遮挡 */
+        }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            padding: 15px 30px;
+            border-bottom: none;
+        }
+
+        .brand-name { 
+            width: 200px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .social-icons {
+            display: grid;
+            grid-template-columns: repeat(8, 60px); 
+            gap: 10px;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        /* 核心交互 CSS */
+        .icon-cell {
+            position: relative; /* 为弹出菜单提供定位参考 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+
+        .social-icon-img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .social-icon-img:hover {
+            transform: scale(1.2);
+        }
+
+        /* 分层弹出菜单 */
+        .region-menu {
+            display: none; /* 平时隐藏 */
+            position: absolute;
+            top: 100%; 
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+            padding: 12px;
+            z-index: 100;
+            margin-top: 10px;
+            
+            /* 关键修改：改为垂直布局，容纳多行内容 */
+            flex-direction: column; 
+            gap: 8px;
+            min-width: 140px; /* 稍微加宽一点，放下 Primary 字样 */
+        }
+
+        /* 鼠标悬停显示 */
+        .icon-cell:hover .region-menu {
+            display: flex;
+        }
+
+        /* 菜单顶部的装饰小箭头 */
+        .region-menu::before {
+            content: "";
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid white;
+        }
+
+        /* 每一行的容器样式 */
+        .menu-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            width: 100%;
+        }
+
+        /* 侧边标签文字样式（Primary / Others） */
+        .row-label {
+            padding-top: 5px; /* 让标签跟图标对齐 */
+            font-size: 10px;
+            font-weight: 800;
+            color: #bbb; /* 浅灰色，不抢戏 */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: 55px; /* 固定宽度确保右侧图标对齐 */
+            flex-shrink: 0;
+        }
+
+        /* 行与行之间的分割线 */
+        .menu-divider {
+            height: 1px;
+            background-color: #f0f0f0;
+            margin: 4px 0;
+            width: 100%;
+        }
+
+        /* 国旗图标按钮 */
+        .region-btn {
+            font-size: 20px;
+            text-decoration: none;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .region-btn:hover {
+            transform: scale(1.3);
+        }
+
+        /* 底部 OPEN ALL 按钮的特殊样式 */
+        .open-all-btn {
+            font-size: 10px;
+            font-weight: 800;
+            color: #0a2b5e;
+            text-align: center;
+            width: 100%;
+            padding-top: 5px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .open-all-btn:hover {
+            color: #b87a3d;
+        }
+
+        /* 无账号状态的容器 */
+        .icon-cell.disabled-state {
+            cursor: not-allowed;
+            opacity: 0.25; /* 降低透明度，使其看起来是虚的 */
+        }
+
+        /* 强制图标变灰 */
+        .grayscale-icon {
+            filter: grayscale(100%);
+            transition: none !important;
+        }
+
+        /* 确保禁用的图标在悬停时不放大 */
+        .icon-cell.disabled-state:hover .social-icon-img {
+            transform: none;
+        }
+        .empty-placeholder { color: #eee; font-size: 14px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="search-section">
+        <h1 id="ui-title">SEARCH FILTER</h1>
+        <div class="filter-group">
+            <input type="text" id="searchInput" placeholder="Search brands..." onkeyup="renderBrands()">
+            <select id="ownerFilter" onchange="renderBrands()"><option value="">All Owners</option></select>
+            <select id="clientFilter" onchange="renderBrands()"><option value="">All Clients</option></select>
+        </div>
+    </div>
+
+    <div class="brand-container" id="brandList"></div>
+
+    <script src="data.js"></script>
+
+    <script>
+        // 一键打开所有链接的函数
+        function openAllLinks(linksJson) {
+            const links = JSON.parse(decodeURIComponent(linksJson));
+            links.forEach(item => {
+                window.open(item.url, '_blank');
+            });
+        }
+
+        function populateFilters() {
+            const owners = new Set();
+            const clients = new Set();
+            if (typeof BRANDS_DATA !== 'undefined') {
+                BRANDS_DATA.forEach(brand => {
+                    if (Array.isArray(brand.owner)) brand.owner.forEach(o => owners.add(o));
+                    else if (brand.owner) owners.add(brand.owner);
+                    if (Array.isArray(brand.client)) brand.client.forEach(c => clients.add(c));
+                    else if (brand.client) clients.add(brand.client);
+                });
+            }
+            const ownerSelect = document.getElementById('ownerFilter');
+            const clientSelect = document.getElementById('clientFilter');
+            Array.from(owners).sort().forEach(o => {
+                const opt = document.createElement('option');
+                opt.value = o; opt.innerText = o;
+                ownerSelect.appendChild(opt);
+            });
+            Array.from(clients).sort().forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c; opt.innerText = c;
+                clientSelect.appendChild(opt);
+            });
+        }
+
+        function renderIcon(platformData, iconUrl, platformName) {
+            const flags = { "Global": "🌐", "UK": "🇬🇧", "Japan": "🇯🇵", "Germany": "🇩🇪", "France": "🇫🇷", "China": "🇨🇳", "USA": "🇺🇸", "Spain": "🇪🇸", "Australia": "🇦🇺", "Taiwan": "🇨🇳", "Philippines": "🇵🇭", "France": "🇫🇷", "India": "🇮🇳", "Korea": "🇰🇷", "Singapore": "🇸🇬" };
+
+            // 1. 处理无账号状态 ---
+            if (!platformData || (Array.isArray(platformData) && platformData.length === 0)) {
+                return `
+                    <div class="icon-cell disabled-state" title="${platformName || ''} not available">
+                        <img src="${iconUrl}" class="social-icon-img grayscale-icon">
+                    </div>
+                `;
+            }
+
+            // 2. 多区域数组渲染 ---
+            if (Array.isArray(platformData)) {
+                const priorityList = platformData.filter(item => item.priority === true);
+                const secondaryList = platformData.filter(item => item.priority !== true);
+                const encodedLinks = encodeURIComponent(JSON.stringify(platformData));
+
+                // 辅助内部函数：渲染带日期的按钮组
+                const renderRowItems = (list) => list.map(item => `
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                        <a href="${item.url}" target="_blank" class="region-btn" title="${item.region}">${flags[item.region] || '📍'}</a>
+                        ${item.updated ? `<span style="font-size: 10px; color: #999; margin-top: -2px;">${item.updated}</span>` : ''}                    
+                    </div>
+                `).join('');
+
+                return `
+                    <div class="icon-cell">
+                        <img src="${iconUrl}" class="social-icon-img">
+                        <div class="region-menu">
+                            <div class="menu-row">
+                                <span class="row-label">Primary</span>
+                                <div style="display: flex; gap: 12px;">${renderRowItems(priorityList)}</div>
+                            </div>
+                            ${secondaryList.length > 0 ? `
+                                <div class="menu-divider"></div>
+                                <div class="menu-row">
+                                    <span class="row-label">Others</span>
+                                    <div style="display: flex; gap: 12px;">${renderRowItems(secondaryList)}</div>
+                                </div>
+                            ` : ''}
+                            <div class="menu-divider"></div>
+                            <div class="menu-row" style="justify-content: center;">
+                                <a class="open-all-btn" onclick="openAllLinks('${encodedLinks}')">🚀 OPEN ALL</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // 3. 单账号处理 (支持对象带日期 或 纯字符串) ---
+            const url = typeof platformData === 'object' ? platformData.url : platformData;
+            const date = typeof platformData === 'object' ? platformData.updated : null;
+
+            return `
+                <div class="icon-cell" title="${date ? 'Last updated: ' + date : ''}">
+                    <a href="${url}" target="_blank">
+                        <img src="${iconUrl}" class="social-icon-img">
+                    </a>
+                    ${date ? `<span style="position: absolute; bottom: -8px; font-size: 10px; color: #888; white-space: nowrap;">${date}</span>` : ''}
+                </div>
+            `;        
+        } 
+
+        function renderBrands() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedOwner = document.getElementById('ownerFilter').value;
+            const selectedClient = document.getElementById('clientFilter').value;
+            const listContainer = document.getElementById('brandList');
+            
+            listContainer.innerHTML = '';
+
+            if (typeof BRANDS_DATA !== 'undefined') {
+                BRANDS_DATA.forEach(brand => {
+                    const matchSearch = brand.name.toLowerCase().includes(searchTerm);
+                    const matchOwner = selectedOwner === "" || (Array.isArray(brand.owner) ? brand.owner.includes(selectedOwner) : brand.owner === selectedOwner);
+                    const matchClient = selectedClient === "" || (Array.isArray(brand.client) ? brand.client.includes(selectedClient) : brand.client === selectedClient);
+
+                    if (matchSearch && matchOwner && matchClient) {
+                        const row = document.createElement('div');
+                        row.className = 'brand-row';
+                        row.innerHTML = `
+                            <div class="brand-name">${brand.name}</div>
+                            <div class="social-icons">
+                                ${renderIcon(brand.facebook, "https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg")}
+                                ${renderIcon(brand.instagram, "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg")}
+                                ${renderIcon(brand.linkedin, "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png")}
+                                ${renderIcon(brand.tiktok, "https://www.freepnglogos.com/uploads/tik-tok-logo-png/tik-tok-android-application-logos-3.png")}
+                                ${renderIcon(brand.twitter || brand.x, "https://freelogopng.com/images/all_img/1690643640twitter-x-icon-png.png")}
+                                ${renderIcon(brand.youtube, "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg")}
+                                ${renderIcon(brand.weibo, "https://cdn.freebiesupply.com/images/large/2x/weibo-logo-transparent.png")}
+                                ${renderIcon(brand.Xiaohongshu, "https://upload.wikimedia.org/wikipedia/commons/c/c1/XiaohongshuLOGO.png?_=20181027065954")}
+                            </div>
+                        `;
+                        listContainer.appendChild(row);
+                    }
+                });
+            }
+        }
+
+        window.onload = function() {
+            populateFilters();
+            renderBrands();
+        };
+    </script>
+</body>
+</html>
