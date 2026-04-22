@@ -47,7 +47,7 @@ const BRANDS_DATA = [
         tiktok: "https://www.tiktok.com/@zenithwatches?lang=en",
         twitter: "https://x.com/ZenithWatches",
         youtube: "https://www.youtube.com/@zenithwatches/videos",
-        linkedin: "https://www.linkedin.com/company/zenithwatches/",
+        linkedin: "https://www.linkedin.com/company/official-zenith-branch-of-lvmh-swiss-manufactures-sa/posts/?feedView=all",
         weibo: "https://weibo.com/u/2116791882",
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5e68a15900000000010076ad"
     },
