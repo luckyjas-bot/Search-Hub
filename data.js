@@ -46,7 +46,7 @@ const BRANDS_DATA = [
         twitter: null,
         youtube: null,
         linkedin: "https://www.linkedin.com/company/aesop/",
-        weibo: "https://weibo.com/aesop",
+        weibo: "https://weibo.com/u/6083296652",
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/58955bdb5e87e72b32713270"
     },
     
