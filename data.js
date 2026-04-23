@@ -97,7 +97,7 @@ const BRANDS_DATA = [
             ],
         facebook: "https://www.facebook.com/cliniquetw/?brand_redir=6391689884",
         tiktok: "https://www.tiktok.com/@clinique",
-        twitter: { url: "https://x.com/Clinique", updated: "2020-10"},
+        twitter: { url: "https://x.com/Clinique", updated: "2020-01"},
         youtube: "https://www.youtube.com/Clinique",
         linkedin: "https://www.linkedin.com/company/clinique/posts/?feedView=all",
         weibo: "https://weibo.com/u/1689210504",
