@@ -63,7 +63,6 @@ const BRANDS_DATA = [
         weibo: "https://weibo.com/u/2116791882",
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5e68a15900000000010076ad"
     },
-    
     {
         name: "Vacheron Constantin",
         client: ["LVMH", "Richemont"],        // 所属客户
@@ -76,6 +75,19 @@ const BRANDS_DATA = [
         linkedin: "https://www.linkedin.com/company/vacheron-constantin/posts/?feedView=all",
         weibo: "https://weibo.com/u/3236334782",
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/56e278e9aed75865e025d524"
+    },
+    {
+        name: "Jaeger-LeCoultre",
+        client: ["LVMH", "Richemont"],        // 所属客户
+        owner: ["Danyu"],      // 负责人
+        instagram: "https://www.instagram.com/jaegerlecoultre/",
+        facebook: "https://www.facebook.com/vacheronconstantin/",
+        tiktok: { url: "https://www.tiktok.com/@jaegerlecoultre", updated: "no content" },
+        twitter: "https://x.com/jaegerlecoultre",
+        youtube: "https://www.youtube.com/@jaegerlecoultre/videos",
+        linkedin: "https://www.linkedin.com/company/vacheron-constantin/posts/?feedView=all",
+        weibo: "https://weibo.com/jaegerlecoultrechina?JLCclick=Footer",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/6080015200000000010055ee"
     },
     {
         name: "Clinique",
