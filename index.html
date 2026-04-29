@@ -286,7 +286,9 @@
         }
 
         function renderIcon(platformData, iconUrl, platformName) {
-            const flags = { "Global": "🌐", "UK": "🇬🇧", "Japan": "🇯🇵", "Germany": "🇩🇪", "France": "🇫🇷", "China": "🇨🇳", "USA": "🇺🇸", "Spain": "🇪🇸", "Australia": "🇦🇺", "Taiwan": "🇨🇳", "Philippines": "🇵🇭", "France": "🇫🇷", "India": "🇮🇳", "Korea": "🇰🇷", "Singapore": "🇸🇬" };
+            const flags = { "Official": "🌐", "Fragrance": "💄", "Global": "🌐", "UK": "🇬🇧", "Japan": "🇯🇵", "Germany": "🇩🇪", "France": "🇫🇷", "China": "🇨🇳", "USA": "🇺🇸", "Spain": "🇪🇸", "Australia": "🇦🇺", "Taiwan": "🇨🇳", "Philippines": "🇵🇭", "France": "🇫🇷", "India": "🇮🇳", "Korea": "🇰🇷", "Singapore": "🇸🇬", "Mexico": "🇲🇽", "Middle East": "🐫",
+                "Sephora Collection": ""
+             };
 
             // 1. 处理无账号状态 ---
             if (!platformData || (Array.isArray(platformData) && platformData.length === 0)) {
@@ -307,7 +309,7 @@
                 const renderRowItems = (list) => list.map(item => `
                     <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
                         <a href="${item.url}" target="_blank" class="region-btn" title="${item.region}">${flags[item.region] || '📍'}</a>
-                        ${item.updated ? `<span style="font-size: 10px; color: #999; margin-top: -2px;">${item.updated}</span>` : ''}                    
+                        ${item.Note ? `<span style="font-size: 10px; color: #999; margin-top: -2px;">${item.Note}</span>` : ''}                    
                     </div>
                 `).join('');
 
@@ -337,7 +339,7 @@
 
             // 3. 单账号处理 (支持对象带日期 或 纯字符串) ---
             const url = typeof platformData === 'object' ? platformData.url : platformData;
-            const date = typeof platformData === 'object' ? platformData.updated : null;
+            const date = typeof platformData === 'object' ? platformData.Note : null;
 
             return `
                 <div class="icon-cell" title="${date ? 'Last updated: ' + date : ''}">
