@@ -286,9 +286,11 @@
         }
 
         function renderIcon(platformData, iconUrl, platformName) {
-            const flags = { "Official": "🌐", "Fragrance": "💄", "Global": "🌐", "UK": "🇬🇧", "Japan": "🇯🇵", "Germany": "🇩🇪", "France": "🇫🇷", "China": "🇨🇳", "USA": "🇺🇸", "Spain": "🇪🇸", "Australia": "🇦🇺", "Taiwan": "🇨🇳", "Philippines": "🇵🇭", "France": "🇫🇷", "India": "🇮🇳", "Korea": "🇰🇷", "Singapore": "🇸🇬", "Mexico": "🇲🇽", "Middle East": "🐫",
-                "Sephora Collection": ""
-             };
+            const flags = { "Official": "🌐", "Fragrance": "💄", "Global": "🌐", "UK": "🇬🇧", "Japan": "🇯🇵", "Germany": "🇩🇪", "France": "🇫🇷", "China": "🇨🇳", "USA": "🇺🇸", 
+            "Spain": "🇪🇸", "Australia": "🇦🇺", "Taiwan": "🇨🇳", "Croatia": "🇭🇷", "Serbia": "🇷🇸","Hong Kong": "🇭🇰", "Turkey": "🇹🇷", "Colombia": "🇨🇴", "Netherlands": "🇳🇱", "Thailand": "🇹🇭", "Philippines": "🇵🇭", "France": "🇫🇷", "India": "🇮🇳", "Korea": "🇰🇷", "Singapore": "🇸🇬", "Mexico": "🇲🇽", "Middle East": "🐫", "Ireland": "🇮🇪",
+            "Canada": "🇨🇦", "New Zealand": "🇳🇿", "Italy": "🇮🇹", "Greece": "🇬🇷", "Malaysia": "🇲🇾", "Indonesia": "🇮🇩", "Switzerland": "🇨🇭", "Portugal": "🇵🇹", "Brazil": "🇧🇷", "Vietnam": "🇻🇳", "Argentina": "🇦🇷", "Poland": "🇵🇱", "Romania": "🇷🇴", "Czechia": "🇨🇿","Peru": "🇵🇪","Kazakhstan": "🇰🇿","Panama": "🇵🇦","Israel": "🇮🇱",
+            "Kids": "👧", "Men": "👨"
+        };
 
             // 1. 处理无账号状态 ---
             if (!platformData || (Array.isArray(platformData) && platformData.length === 0)) {
@@ -305,13 +307,21 @@
                 const secondaryList = platformData.filter(item => item.priority !== true);
                 const encodedLinks = encodeURIComponent(JSON.stringify(platformData));
 
-                // 辅助内部函数：渲染带日期的按钮组
-                const renderRowItems = (list) => list.map(item => `
-                    <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
-                        <a href="${item.url}" target="_blank" class="region-btn" title="${item.region}">${flags[item.region] || '📍'}</a>
-                        ${item.Note ? `<span style="font-size: 10px; color: #999; margin-top: -2px;">${item.Note}</span>` : ''}                    
-                    </div>
-                `).join('');
+            // 辅助内部函数增加 subLogo 判断
+                const renderRowItems = (list) => list.map(item => {
+                    // 判断是显示图片还是显示 Flag
+                const iconContent = item.subLogo 
+                    ? `<img src="${item.subLogo}" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; vertical-align: -5px; margin-top: -2px;">` 
+                    : (flags[item.region] || '📍');
+                    return `
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
+                            <a href="${item.url}" target="_blank" class="region-btn" title="${item.region}">
+                                ${iconContent}
+                            </a>
+                            ${item.Note ? `<span style="font-size: 10px; color: #999; margin-top: -2px;">${item.Note}</span>` : ''}                    
+                        </div>
+                    `;
+                }).join('');
 
                 return `
                     <div class="icon-cell">
@@ -336,8 +346,7 @@
                     </div>
                 `;
             }
-
-            // 3. 单账号处理 (支持对象带日期 或 纯字符串) ---
+                // 3. 单账号处理 (支持对象带日期 或 纯字符串) ---
             const url = typeof platformData === 'object' ? platformData.url : platformData;
             const date = typeof platformData === 'object' ? platformData.Note : null;
 
