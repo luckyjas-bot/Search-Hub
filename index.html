@@ -83,7 +83,7 @@
         .brand-row {
             display: flex;
             align-items: center;
-            padding: 15px 30px;
+            padding: 10px 20px;
             border-bottom: none;
         }
 
@@ -94,12 +94,14 @@
             flex-shrink: 0;
         }
 
+        /* 图标组容器 */
         .social-icons {
-            display: grid;
-            grid-template-columns: repeat(8, 60px); 
-            gap: 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;      /* 强制不换行 */
+            align-items: center;
+            gap: 30px;              /* 控制图标之间的均匀间距 */
             justify-content: center;
-            flex-grow: 1;
         }
 
         /* 核心交互 CSS */
@@ -112,8 +114,8 @@
         }
 
         .social-icon-img {
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             object-fit: contain;
             cursor: pointer;
             transition: transform 0.2s;
@@ -286,9 +288,9 @@
         }
 
         function renderIcon(platformData, iconUrl, platformName) {
-            const flags = { "Official": "🌐", "Fragrance": "💄", "Global": "🌐", "UK": "🇬🇧", "Japan": "🇯🇵", "Germany": "🇩🇪", "France": "🇫🇷", "China": "🇨🇳", "USA": "🇺🇸", 
+            const flags = { "Official": "🌍", "Fragrance": "💄", "Global": "🌍", "UK": "🇬🇧", "Japan": "🇯🇵", "Germany": "🇩🇪", "France": "🇫🇷", "China": "🇨🇳", "USA": "🇺🇸", "Qatar": "🇶🇦", "United Arab Emirates": "🇦🇪", "Belgium": "🇧🇪",
             "Spain": "🇪🇸", "Australia": "🇦🇺", "Taiwan": "🇨🇳", "Croatia": "🇭🇷", "Serbia": "🇷🇸","Hong Kong": "🇭🇰", "Turkey": "🇹🇷", "Colombia": "🇨🇴", "Netherlands": "🇳🇱", "Thailand": "🇹🇭", "Philippines": "🇵🇭", "France": "🇫🇷", "India": "🇮🇳", "Korea": "🇰🇷", "Singapore": "🇸🇬", "Mexico": "🇲🇽", "Middle East": "🐫", "Ireland": "🇮🇪",
-            "Canada": "🇨🇦", "New Zealand": "🇳🇿", "Italy": "🇮🇹", "Greece": "🇬🇷", "Malaysia": "🇲🇾", "Indonesia": "🇮🇩", "Switzerland": "🇨🇭", "Portugal": "🇵🇹", "Brazil": "🇧🇷", "Vietnam": "🇻🇳", "Argentina": "🇦🇷", "Poland": "🇵🇱", "Romania": "🇷🇴", "Czechia": "🇨🇿","Peru": "🇵🇪","Kazakhstan": "🇰🇿","Panama": "🇵🇦","Israel": "🇮🇱",
+            "Canada": "🇨🇦", "New Zealand": "🇳🇿", "Hawaii": "🏝️", "Italy": "🇮🇹", "Greece": "🇬🇷", "Malaysia": "🇲🇾", "Indonesia": "🇮🇩", "Switzerland": "🇨🇭", "Portugal": "🇵🇹", "Brazil": "🇧🇷", "Vietnam": "🇻🇳", "Argentina": "🇦🇷", "Poland": "🇵🇱", "Romania": "🇷🇴", "Czechia": "🇨🇿","Peru": "🇵🇪","Kazakhstan": "🇰🇿","Panama": "🇵🇦","Israel": "🇮🇱",
             "Kids": "👧", "Men": "👨"
         };
 
@@ -312,7 +314,7 @@
                     // 判断是显示图片还是显示 Flag
                 const iconContent = item.subLogo 
                     ? `<img src="${item.subLogo}" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; vertical-align: -5px; margin-top: -2px;">` 
-                    : (flags[item.region] || '📍');
+                    : (flags[item.region] || '🌐');
                     return `
                         <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
                             <a href="${item.url}" target="_blank" class="region-btn" title="${item.region}">
@@ -380,6 +382,7 @@
                         row.innerHTML = `
                             <div class="brand-name">${brand.name}</div>
                             <div class="social-icons">
+                                ${renderIcon(brand.official_web, "https://cdn-icons-png.flaticon.com/512/1006/1006771.png")}
                                 ${renderIcon(brand.instagram, "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg")}
                                 ${renderIcon(brand.linkedin, "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png")}
                                 ${renderIcon(brand.tiktok, "https://www.freepnglogos.com/uploads/tik-tok-logo-png/tik-tok-android-application-logos-3.png")}

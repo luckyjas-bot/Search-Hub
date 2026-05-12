@@ -1,11 +1,23 @@
 // data.js - 存放你的品牌库
 
+// Owner List (just change the name here)
+const STAFF = {
+    A: "Salvatore",
+    B: "Alejandra",
+    C: "Charlotte",
+    D: "Danyu",
+    E: "Adeline",
+    F: "Jingyi",
+    G: "Kaiyu",
+};
+
 // 品牌数据
 const BRANDS_DATA = [
     {
         name: "Acqua di Parma",
-        client: ["LVMH", "Puig"],         // 所属客户
-        owner: ["Adeline"],      // 负责人
+        client: ["LVMH", "Puig", "L'Occitane"],         // 所属客户
+        owner: [STAFF.E],      // 负责人
+        official_web: "https://www.acquadiparma.com/fr/fr/",
         instagram: "https://www.instagram.com/acquadiparma/",
         facebook: "https://www.facebook.com/acquadiparma",
         tiktok: null,
@@ -18,12 +30,13 @@ const BRANDS_DATA = [
     
     {
         name: "Aesop",
-        client: ["LVMH", "Puig", "L'Occitane"],        // 所属客户
-        owner: ["Adeline"],      // 负责人
+        client: ["Puig", "L'Occitane"],        // 所属客户
+        owner: [STAFF.E],      // 负责人
+        official_web: "https://www.aesop.com/fr/fr/",
         instagram: "https://www.instagram.com/aesop/",
         facebook: "https://www.facebook.com/Aesop",
         tiktok: null,
-        twitter: null,
+        twitter: {url: "https://x.com/aesopskincare", Note: "2022-10"},
         youtube: null,
         linkedin: "https://www.linkedin.com/company/aesop/",
         weibo: "https://weibo.com/u/6083296652",
@@ -33,7 +46,7 @@ const BRANDS_DATA = [
         {
         name: "Blancpain",
         client: ["LVMH", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/blancpain1735/",
         facebook: "https://www.facebook.com/Blancpain/",
         tiktok: { url: "https://www.tiktok.com/@blancpain",Note: "no content"},
@@ -47,7 +60,7 @@ const BRANDS_DATA = [
     {
         name: "Clinique",
         client: ["Chanel Beauty"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: [
                 { url: "https://www.instagram.com/clinique/", region: "Global", priority: true },
                 { url: "https://www.instagram.com/cliniqueuk/", region: "UK",priority: true },
@@ -74,7 +87,7 @@ const BRANDS_DATA = [
     {
         name: "Jaeger-LeCoultre",
         client: ["LVMH", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/jaegerlecoultre/",
         facebook: "https://www.facebook.com/vacheronconstantin/",
         tiktok: { url: "https://www.tiktok.com/@jaegerlecoultre", Note: "no content" },
@@ -88,7 +101,7 @@ const BRANDS_DATA = [
     {
         name: "Vacheron Constantin",
         client: ["LVMH", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/vacheronconstantin/",
         facebook: "https://www.facebook.com/vacheronconstantin/",
         tiktok: "https://www.tiktok.com/@vacheronconstantin",
@@ -102,7 +115,7 @@ const BRANDS_DATA = [
     {
         name: "Zenith",
         client: ["LVMH", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/zenithwatches/",
         facebook: "https://www.facebook.com/ZenithWatches/",
         tiktok: "https://www.tiktok.com/@zenithwatches?lang=en",
@@ -116,7 +129,7 @@ const BRANDS_DATA = [
     {
         name: "Louis Vuitton",
         client: ["LVMH", "Prada", "Chanel Fashion", "Richemont"],        // 所属客户
-        owner: ["Danyu", "Salvatore"],      // 负责人
+        owner: [STAFF.D, STAFF.A],      // 负责人
         instagram: "https://www.instagram.com/louisvuitton/",
         facebook: "https://www.facebook.com/LouisVuitton/",
         tiktok: "https://www.tiktok.com/@louisvuitton?lang=en",
@@ -133,7 +146,7 @@ const BRANDS_DATA = [
     {
         name: "Prada",
         client: ["LVMH", "Prada", "Chanel Fashion", "Richemont"],        // 所属客户
-        owner: ["Danyu", "Salvatore"],      // 负责人
+        owner: [STAFF.D, STAFF.A],      // 负责人
         instagram: "https://www.instagram.com/prada/",
         facebook: "https://www.facebook.com/Prada/",
         tiktok: "https://www.tiktok.com/@prada?lang=en",
@@ -150,7 +163,7 @@ const BRANDS_DATA = [
     {
         name: "Prada Beauty",
         client: ["LVMH", "Prada", "Chanel Fashion", "Richemont"],        // 所属客户
-        owner: ["Danyu", "Salvatore"],      // 负责人
+        owner: [STAFF.D, STAFF.A],      // 负责人
         instagram: "https://www.instagram.com/pradabeauty/",
         facebook: "https://www.facebook.com/Pradabeautyofficial",
         tiktok: "https://www.tiktok.com/@pradabeauty?lang=en",
@@ -164,7 +177,7 @@ const BRANDS_DATA = [
     {
         name: "Saint Laurent Paris",
         client: ["LVMH", "Prada", "Chanel Fashion", "Richemont"],        // 所属客户
-        owner: ["Danyu", "Salvatore"],      // 负责人
+        owner: [STAFF.D, STAFF.A],      // 负责人
         instagram: "https://www.instagram.com/ysl/?hl=en",
         facebook: "https://www.facebook.com/ysl/?locale=fr_FR",
         tiktok: "https://www.tiktok.com/@ysl?lang=en",
@@ -177,7 +190,7 @@ const BRANDS_DATA = [
     {
         name: "Tory Burch",
         client: ["LVMH"],        // 所属客户
-        owner: ["Danyu", "Salvatore"],      // 负责人
+        owner: [STAFF.D, STAFF.A],      // 负责人
         instagram: "https://www.instagram.com/toryburch/",
         facebook: "https://www.facebook.com/toryburch/",
         tiktok: "https://www.tiktok.com/@toryburch?lang=en",
@@ -190,7 +203,7 @@ const BRANDS_DATA = [
     {
         name: "Valentino",
         client: ["LVMH", "Prada", "Chanel Fashion", "Richemont"],        // 所属客户
-        owner: ["Danyu", "Salvatore"],      // 负责人
+        owner: [STAFF.D, STAFF.A],      // 负责人
         instagram: "https://www.instagram.com/maisonvalentino/?hl=en",
         facebook: "https://www.facebook.com/valentino/",
         tiktok: "https://www.tiktok.com/@valentino?lang=en",
@@ -203,7 +216,7 @@ const BRANDS_DATA = [
     {
         name: "Bottega Veneta",
         client: ["Prada", "Chanel Fashion", "Richemont"],        // 所属客户
-        owner: ["Danyu", "Alejandra"],      // 负责人
+        owner: [STAFF.D, STAFF.B],      // 负责人
         instagram: "hhttps://www.instagram.com/newbottega/",
         facebook: "https://www.facebook.com/bottegaveneta",
         tiktok: null,
@@ -216,7 +229,7 @@ const BRANDS_DATA = [
     {
         name: "Bulgari",
         client: ["LVMH", "Swarovski", "Chanel Fashion", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/bvlgari/",
         facebook: "https://www.facebook.com/Bulgari/",
         tiktok: "https://www.tiktok.com/@bvlgari?lang=en",
@@ -235,7 +248,7 @@ const BRANDS_DATA = [
     {
         name: "Cartier",
         client: ["LVMH", "Swarovski", "Chanel Fashion", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/cartier/",
         facebook: "https://www.facebook.com/cartier.france",
         tiktok: "https://www.tiktok.com/@cartier?lang=en",
@@ -248,7 +261,7 @@ const BRANDS_DATA = [
     {
         name: "TAG Heuer",
         client: ["LVMH", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/tagheuer/",
         facebook: "https://www.facebook.com/TAGHeuer/",
         tiktok: "https://www.tiktok.com/@tagheuer?lang=en",
@@ -261,7 +274,7 @@ const BRANDS_DATA = [
     {
         name: "Rolex",
         client: ["LVMH", "Chanel Fashion", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/rolex/", 
         facebook: "https://www.facebook.com/rolex/",
         tiktok: {url: "https://www.tiktok.com/@rolex?lang=en", Note: "no content"},
@@ -274,7 +287,7 @@ const BRANDS_DATA = [
     {
         name: "Omega",
         client: ["LVMH", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/omega/", 
         facebook: "https://www.facebook.com/omega/",
         tiktok: "https://www.tiktok.com/@omega?lang=en",
@@ -287,7 +300,7 @@ const BRANDS_DATA = [
     {
         name: "Hublot",
         client: ["LVMH", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/hublot/", 
         facebook: "https://www.facebook.com/Hublot/",
         tiktok: "https://www.tiktok.com/@hublot?lang=en",
@@ -300,7 +313,7 @@ const BRANDS_DATA = [
     {
         name: "Van Cleef & Arpels",
         client: ["LVMH", "Swarovski", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/vancleefarpels/",
         facebook: "https://www.facebook.com/profile.php?id=100064912201715&brand_redir=68441743439#",
         tiktok: "https://www.tiktok.com/@vancleefarpels",
@@ -313,7 +326,7 @@ const BRANDS_DATA = [
     {
         name: "Repossi",
         client: ["LVMH"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/repossi/",
         facebook: "https://www.facebook.com/Repossi/",
         tiktok: "https://www.tiktok.com/@repossi",
@@ -326,7 +339,7 @@ const BRANDS_DATA = [
     {
         name: "Graff Diamonds",
         client: ["LVMH", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/graff/", 
         facebook: "https://www.facebook.com/graff/",
         tiktok: "https://www.tiktok.com/@graffdiamonds",
@@ -339,7 +352,7 @@ const BRANDS_DATA = [
     {
         name: "Fred",
         client: ["LVMH"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/fredjewelry/", 
         facebook: "https://www.facebook.com/FredJewelryFR/",
         tiktok: "https://www.tiktok.com/@fredjewelry?lang=en",
@@ -352,7 +365,7 @@ const BRANDS_DATA = [
     {
         name: "Chow Tai Fook",
         client: ["LVMH", "Swarovski", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/chowtaifookjewellery/",
         facebook: "https://www.facebook.com/CHOWTAIFOOK/",
         tiktok: null,
@@ -365,7 +378,7 @@ const BRANDS_DATA = [
     {
         name: "Chaumet",
         client: ["LVMH", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/chaumetofficial/",
         facebook: "https://www.facebook.com/chaumet.fr",
         tiktok: "https://www.tiktok.com/@chaumet?lang=en",
@@ -378,7 +391,7 @@ const BRANDS_DATA = [
     {
         name: "Tiffany & Co.",
         client: ["LVMH", "Swarovski", "Richemont"],        // 所属客户
-        owner: ["Danyu"],      // 负责人
+        owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/tiffanyandco/",
         facebook: "https://www.facebook.com/Tiffany/",
         tiktok: "https://www.tiktok.com/@tiffanyandco?lang=en",
@@ -391,7 +404,7 @@ const BRANDS_DATA = [
     {
         name: "Berluti",
         client: ["LVMH"], // 所属客户
-        owner: ["Danyu","Alejandra"],   // 负责人
+        owner: [STAFF.D,STAFF.B],   // 负责人
         instagram: "https://www.instagram.com/berluti/",
         facebook: "https://www.facebook.com/berluti",
         tiktok: null, 
@@ -402,9 +415,9 @@ const BRANDS_DATA = [
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/59929283e8ac2b568393e155"
     },
     {
-        name: "Ulta",
+        name: "Ulta Beauty",
         client: ["LVMH"], 
-        owner: ["Charlotte"],     
+        owner: [STAFF.C],     
         instagram: [
             {url: "https://www.instagram.com/ultabeauty/", region: "Global", priority: true},
             {url: "https://www.instagram.com/ultabeautymx", region: "Mexico", priority: true},
@@ -421,7 +434,7 @@ const BRANDS_DATA = [
     {
         name: "Sephora",
         client: ["LVMH"], 
-        owner: ["Charlotte"],     
+        owner: [STAFF.C],     
         instagram: [
             { url: "https://www.instagram.com/sephora/", region: "Global", priority: true },
             { url: "https://www.instagram.com/sephorafrance/", region: "France", priority: true },
@@ -457,7 +470,7 @@ const BRANDS_DATA = [
     {
         name: "Nordstrom",
         client: ["LVMH"], 
-        owner: ["Charlotte"],     
+        owner: [STAFF.C],     
         instagram: "https://www.instagram.com/nordstrom/",
         facebook: "https://www.facebook.com/Nordstrom",
         tiktok: "https://www.tiktok.com/@nordstrom",
@@ -470,7 +483,7 @@ const BRANDS_DATA = [
     {
         name: "Nocibé",
         client: ["LVMH"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/nocibe_france/",
         facebook: "https://www.facebook.com/nocibe",
         tiktok: "https://www.tiktok.com/@nocibe_france",
@@ -483,7 +496,7 @@ const BRANDS_DATA = [
     {
         name: "Net-a-porter",
         client: ["LVMH"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/netaporter/",
         facebook: "https://www.facebook.com/netaporter",
         tiktok: "https://www.tiktok.com/@netaporter",
@@ -496,7 +509,7 @@ const BRANDS_DATA = [
     {
         name: "Neiman Marcus",
         client: ["LVMH"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/neimanmarcus/",
         facebook: "https://www.facebook.com/neimanmarcus",
         tiktok: "https://www.tiktok.com/@neimanmarcus",
@@ -509,7 +522,7 @@ const BRANDS_DATA = [
     {
         name: "Mytheresa",
         client: ["LVMH"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: [
             { url: "https://www.instagram.com/mytheresa.com/", region: "Global", priority: true },
             { url: "https://www.instagram.com/mytheresa.men/", region: "Men", Note: "Men", priority: true }, 
@@ -526,7 +539,7 @@ const BRANDS_DATA = [
     {
         name: "Marionnaud",
         client: ["LVMH"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/marionnaudfr/",
         facebook: "https://www.facebook.com/Marionnaud.France",
         tiktok: "https://www.tiktok.com/@marionnaud_maroc",
@@ -539,7 +552,7 @@ const BRANDS_DATA = [
     {
         name: "Le Bon Marché",
         client: ["LVMH"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/lebonmarcherivegauche/",
         facebook: "https://www.facebook.com/lebonmarche",
         tiktok: "https://www.tiktok.com/@lebonmarcherivegauche",
@@ -552,7 +565,7 @@ const BRANDS_DATA = [
     {
         name: "La Samaritaine",
         client: ["LVMH"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/samaritaineparis/",
         facebook: "https://www.facebook.com/samaritaineparis",
         tiktok: "https://www.tiktok.com/@samaritaineparis",
@@ -565,8 +578,16 @@ const BRANDS_DATA = [
     {
         name: "Galeries Lafayette",
         client: ["LVMH"],
-        owner: ["Charlotte"],
-        instagram: "https://www.instagram.com/galerieslafayette/",
+        owner: [STAFF.C],
+        instagram: [
+            { url: "https://www.instagram.com/galerieslafayette/", region: "Global", priority: true, Note:"Main" },
+            { url: "https://www.instagram.com/galerieslafayettechampselysees/", region: "France", priority: true, Note:"Champs-Elysées" },
+            { url: "https://www.instagram.com/galerieslafayette_rennes/", region: "France", priority: true, Note:"Rennes" },
+            { url: "https://www.instagram.com/galerieslafayette_avignon/", region: "France", priority: false, Note:"Avignon" },
+            { url: "https://www.instagram.com/galerieslafayettedoha/", region: "Qatar", priority: true, Note:"Doha" },
+            { url: "https://www.instagram.com/galerieslafayettedubai/", region: "United Arab Emirates", priority: true, Note:"Dubai" },
+            { url: "https://www.instagram.com/galerieslafayettemacau/", region: "China", priority: false, Note:"Macau" },
+        ],
         facebook: "https://www.facebook.com/galerieslafayette",
         tiktok: "https://www.tiktok.com/@galerieslafayette",
         twitter: "https://twitter.com/Galeries_Laf",
@@ -578,7 +599,7 @@ const BRANDS_DATA = [
     {
         name: "Farfetch",
         client: ["LVMH"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/farfetch/",
         facebook: "https://www.facebook.com/Farfetch",
         tiktok: "https://www.tiktok.com/@farfetch",
@@ -591,7 +612,7 @@ const BRANDS_DATA = [
     {
         name: "24S",
         client: ["LVMH"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/24s/",
         facebook: "https://www.facebook.com/24sofficiel",
         tiktok: "https://www.tiktok.com/@24s",
@@ -604,7 +625,7 @@ const BRANDS_DATA = [
     {
         name: "JACQUEMUS",
         client: ["LVMH","Chanel Beauty"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/jacquemus/",
         facebook: "https://www.facebook.com/JACQUEMUS",
         tiktok: "https://www.tiktok.com/@jacquemus",
@@ -617,7 +638,7 @@ const BRANDS_DATA = [
     {
         name: "Miu Miu",
         client: ["Prada","Richemont"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/miumiu/",
         facebook: "https://www.facebook.com/MiuMiu/",
         tiktok: "https://www.tiktok.com/@miumiu?lang=en",
@@ -630,20 +651,20 @@ const BRANDS_DATA = [
     {
         name: "Versace",
         client: ["Prada"],
-        owner: ["Charlotte", "Alejandra"],
+        owner: [STAFF.C, STAFF.B],
         instagram: "https://www.instagram.com/versace/",
         facebook: "https://www.facebook.com/versace",
         tiktok: "https://www.tiktok.com/@versace",
         twitter: "https://x.com/Versace?lang=en",
         youtube: "https://www.youtube.com/@Versace",
         linkedin: "https://www.linkedin.com/company/versace/",
-        weibo: null,
-        Xiaohongshu: null
+        weibo: "https://weibo.com/u/2356563467",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5d19c6ef000000001001f8da?xsec_token=ABPmJZIQ57UaondWvYmm6N9tupfACVBFgZ17rsphktIKY%3D&xsec_source=pc_search"
     },
     {
         name: "Harry Winston",
         client: ["Richemont"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/harrywinston/",
         facebook: "https://www.facebook.com/HarryWinston",
         tiktok: null, 
@@ -656,7 +677,7 @@ const BRANDS_DATA = [
     {
         name: "ZARA",
         client: ["Lacoste"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/zara/",
         facebook: "https://www.facebook.com/Zara",
         tiktok: "https://www.tiktok.com/@zara",
@@ -669,7 +690,7 @@ const BRANDS_DATA = [
     {
         name: "H&M",
         client: ["Lacoste"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: [
             { url: "https://www.instagram.com/hm/", region: "Global", priority: true },
             { url: "https://www.instagram.com/hm_kids/", region: "Kids", Note: "Kids" },
@@ -686,7 +707,7 @@ const BRANDS_DATA = [
     {
         name: "TOMMY HILFIGER",
         client: ["Lacoste"],
-        owner: ["Charlotte"],
+        owner: [STAFF.C],
         instagram: "https://www.instagram.com/tommyhilfiger/",
         facebook: "https://www.facebook.com/tommyhilfiger",
         tiktok: "https://www.tiktok.com/@tommyhilfiger",
@@ -699,7 +720,7 @@ const BRANDS_DATA = [
     {
         name: "Ole Henriksen",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: "https://www.instagram.com/olehenriksen",
         facebook: "https://www.facebook.com/olehenriksen",
         tiktok: "https://www.tiktok.com/@olehenriksen",
@@ -712,7 +733,7 @@ const BRANDS_DATA = [
     {
         name: "SK-II",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: [
             { url: "https://www.instagram.com/skii", region: "Global", priority: true },
             { url: "https://www.instagram.com/skii.usa/", region: "USA", priority: true},
@@ -730,7 +751,7 @@ const BRANDS_DATA = [
     {
         name: "Sisley",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: "https://www.instagram.com/sisleyparisofficial",
         facebook: "https://www.facebook.com/SisleyParisFrance",
         tiktok: "https://www.tiktok.com/@sisleyparisofficial",
@@ -743,7 +764,7 @@ const BRANDS_DATA = [
     {
         name: "Marc Jacobs Beauty",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: "https://www.instagram.com/marcjacobsfragrances",
         facebook: "https://www.facebook.com/MarcJacobsFragrances",
         tiktok: "https://www.tiktok.com/@marcjacobsfragrances",
@@ -756,8 +777,14 @@ const BRANDS_DATA = [
     {
         name: "Make Up For Ever",
         client: ["LVMH"],
-        owner: ["Jingyi"],
-        instagram: "https://www.instagram.com/makeupforever",
+        owner: [STAFF.F],
+        instagram: [
+            { url: "https://www.instagram.com/makeupforever", region: "Global", priority: true },
+            { url: "https://www.instagram.com/makeupforever_tw/", region: "Taiwan", Note:"Taiwan"},
+            { url: "https://www.instagram.com/makeupforeverkorea/", region: "Korea"},
+            { url: "https://www.instagram.com/makeupforever_hk/", region: "Hong Kong"},
+            { url: "https://www.instagram.com/makeupforeverjapan/", region: "Japan"}
+        ],
         facebook: "https://www.facebook.com/makeupforeverfrance",
         tiktok: "https://www.tiktok.com/@makeupforever", 
         twitter: "https://twitter.com/makeupforever",
@@ -769,7 +796,7 @@ const BRANDS_DATA = [
     {
         name: "MAC",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: [
             { url: "https://www.instagram.com/maccosmetics", region: "Global", priority: true },
             { url: "https://www.instagram.com/maccosmeticsusa/", region: "USA", priority: true },
@@ -801,7 +828,7 @@ const BRANDS_DATA = [
     {
         name: "La Mer",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: [
             { url: "https://www.instagram.com/lamer", region: "Global", priority: true },
             { url: "https://www.instagram.com/lamerthailandofficial/", region: "Thailand", priority: true },
@@ -820,7 +847,7 @@ const BRANDS_DATA = [
     {
         name: "Lancôme",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: "https://www.instagram.com/lancomeofficial",
         facebook: "https://www.facebook.com/lancomefrance",
         tiktok: "https://www.tiktok.com/@lancome.official",
@@ -833,7 +860,7 @@ const BRANDS_DATA = [
     {
         name: "L'Oréal Paris",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: "https://www.instagram.com/lorealparis",
         facebook: "https://www.facebook.com/LOrealParisFrance/",
         tiktok: [
@@ -849,7 +876,7 @@ const BRANDS_DATA = [
     {
         name: "Kiehl's",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: [
             { url: "https://www.instagram.com/kiehls", region: "Global", priority: true },
             { url: "https://www.instagram.com/kiehlsfrance/", region: "France", priority: true },
@@ -884,7 +911,7 @@ const BRANDS_DATA = [
     {
         name: "Kenzo Parfums",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: "https://www.instagram.com/kenzoparfums",
         facebook: "https://www.facebook.com/kenzoparfums.france/",
         tiktok: null,
@@ -897,7 +924,7 @@ const BRANDS_DATA = [
     {
         name: "Guerlain",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: "https://www.instagram.com/Guerlain",
         facebook: "https://www.facebook.com/Guerlain",
         tiktok: "https://www.tiktok.com/@Guerlain",
@@ -910,7 +937,7 @@ const BRANDS_DATA = [
     {
         name: "Givenchy Parfums",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: "https://www.instagram.com/givenchybeauty",
         facebook: "https://www.facebook.com/givenchybeauty.france/",
         tiktok: "https://www.tiktok.com/@givenchybeauty",
@@ -923,7 +950,7 @@ const BRANDS_DATA = [
     {
         name: "Fresh",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: "https://www.instagram.com/freshbeauty",
         facebook: "https://www.facebook.com/FreshBeautyFR/",
         tiktok: "https://www.tiktok.com/@freshbeauty",
@@ -936,7 +963,7 @@ const BRANDS_DATA = [
     {
         name: "Fenty Beauty",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: [
             { url: "https://www.instagram.com/fentybeauty", region: "Global", priority: true },
             { url: "https://www.instagram.com/fentybeautyme/", region: "Middle East", priority: true }
@@ -952,7 +979,7 @@ const BRANDS_DATA = [
     {
         name: "Estée Lauder",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: [
             { url: "https://www.instagram.com/esteelauder", region: "Global", priority: true },
             { url: "https://www.instagram.com/esteelauder_sg/", region: "Singapore", priority: true },
@@ -977,7 +1004,28 @@ const BRANDS_DATA = [
             { url: "https://www.instagram.com/esteelaudersa/", region: "South Africa", priority: true },
             { url: "https://www.instagram.com/esteelauderkr/", region: "Korea", priority: true }
         ],
-        facebook: "https://www.facebook.com/EsteeLauder/",
+        facebook: [
+            { url: "https://www.facebook.com/EsteeLauder/", region: "Global" },
+            { url: "https://www.facebook.com/esteelaudergermany", region: "Germany" },
+            { url: "https://www.facebook.com/esteelaudermy", region: "Malaysia" },
+            { url: "https://www.facebook.com/EsteeLauderPH", region: "Philippines" },
+            { url: "https://www.facebook.com/EsteeLauderKR", region: "Korea" },
+            { url: "https://www.facebook.com/EsteeLauderIndia", region: "India" },
+            { url: "https://www.facebook.com/EsteeLauderCL", region: "Chile" },
+            { url: "https://www.facebook.com/esteelaudertw", region: "Taiwan" },
+            { url: "https://www.facebook.com/esteelauderIT", region: "Italy", Note: "2024-05" },
+            { url: "https://www.facebook.com/EsteeLauderSASouth Africa", region: "South Africa", Note: "2023" },
+            { url: "https://www.facebook.com/EsteeLauderIndonesia", region: "Indonesia" },
+            { url: "https://www.facebook.com/EsteeLauderSwitzerland", region: "Switzerland", Note: "2023" },
+            { url: "https://www.facebook.com/esteelaudervn", region: "Vietnam" },
+            { url: "https://www.facebook.com/EsteeLauderES", region: "Spain", Note: "2023" },
+            { url: "https://www.facebook.com/estee.lauder.portugal", region: "Portugal", Note: "2023" },
+            { url: "https://www.facebook.com/EsteeLauderMX", region: "Mexico" },
+            { url: "https://www.facebook.com/EsteeLauderAR", region: "Argentina" },
+            { url: "https://www.facebook.com/EsteeLauderPROficial", region: "Puerto Rico" },
+            { url: "https://www.facebook.com/EsteeLauderCo", region: "Colombia" },
+            { url: "https://www.facebook.com/esteelauderguatemala", region: "Guatemala", Note: "2021" }
+        ],
         tiktok: "https://www.tiktok.com/@esteelauder",
         twitter: null,
         youtube: "https://www.youtube.com/@esteelauder",
@@ -988,7 +1036,7 @@ const BRANDS_DATA = [
     {
         name: "Clarins",
         client: ["LVMH"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         instagram: [
             { url: "https://www.instagram.com/clarinsofficial", region: "Global", priority: true },
             { url: "https://www.instagram.com/clarinsfr/", region: "France", priority: true },
@@ -1021,7 +1069,7 @@ const BRANDS_DATA = [
     {
         name: "Tudor",
         client: ["LVMH", "Richemont"],
-        owner: ["Jingyi"],
+        owner: [STAFF.F],
         official_web: "https://www.tudorwatch.com/fr",
         instagram: "https://www.instagram.com/tudorwatch/",
         facebook: "https://www.facebook.com/tudorwatch/",
@@ -1035,7 +1083,7 @@ const BRANDS_DATA = [
     {
         name: "Away",
         client: ["LVMH"],
-        owner: ["Jingyi", "Salvatore"],
+        owner: [STAFF.F, STAFF.A],
         instagram: "https://www.instagram.com/away/",
         facebook: "https://www.facebook.com/away/",
         tiktok: "https://www.tiktok.com/@away",
@@ -1048,7 +1096,7 @@ const BRANDS_DATA = [
     {
         name: "Balenciaga",
         client: ["LVMH", "Chanel Fashion"],
-        owner: ["Jingyi","Salvatore"],
+        owner: [STAFF.F,STAFF.A],
         instagram: "https://www.instagram.com/balenciaga/",
         facebook: "https://www.facebook.com/Balenciaga/",
         tiktok: "https://www.tiktok.com/@balenciaga",
@@ -1061,7 +1109,7 @@ const BRANDS_DATA = [
     {
         name: "Burberry",
         client: ["LVMH"],
-        owner: ["Jingyi", "Salvatore"],
+        owner: [STAFF.F, STAFF.A],
         instagram: "https://www.instagram.com/burberry/",
         facebook: "https://www.facebook.com/Burberry/",
         tiktok: "https://www.tiktok.com/@burberry",
@@ -1077,7 +1125,7 @@ const BRANDS_DATA = [
     {
         name: "Burberry Beauty",
         client: ["LVMH"],
-        owner: ["Jingyi", "Salvatore"],
+        owner: [STAFF.F, STAFF.A],
         instagram: "https://www.instagram.com/burberrybeauty/",
         facebook: null,
         tiktok: null,
@@ -1086,6 +1134,1323 @@ const BRANDS_DATA = [
         linkedin: null,
         weibo: null,
         Xiaohongshu: null
+    },
+    {
+        name: "Loewe",
+        client: ["LVMH", "Prada", "L'Occitane", "Chanel Fashion", "Richemont"],
+        owner: [STAFF.E, STAFF.B],
+        instagram: "https://www.instagram.com/loewe/",
+        facebook: "https://www.facebook.com/LOEWE/",
+        tiktok: "https://www.tiktok.com/@loewe/",
+        twitter: null,
+        youtube: "https://www.youtube.com/loewe",
+        linkedin: "https://www.linkedin.com/company/loewe/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2727735071",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5b3c450a4eacab3bee672027"
+    },
+    {
+        name: "Loro Piana",
+        client: ["LVMH", "Prada", "L'Occitane", "Chanel Fashion"],
+        owner: [STAFF.E, STAFF.B],
+        instagram: "https://www.instagram.com/loropiana",
+        facebook: "https://www.facebook.com/LoroPiana/",
+        tiktok: "https://www.tiktok.com/@loropiana",
+        twitter: "https://twitter.com/loropiana",
+        youtube: "https://www.youtube.com/@LoroPianaOfficial",
+        linkedin: "https://www.linkedin.com/company/loro-piana/posts/?feedView=all",
+        weibo: "https://weibo.com/u/3194733584",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5ca06aea000000001700aeea"
+    },
+    {
+        name: "Marc Jacobs",
+        client: ["LVMH"],
+        owner: [STAFF.E, "Alejandra"],
+        instagram: "https://www.instagram.com/marcjacobs",
+        facebook: "https://www.facebook.com/marcjacobsintl",
+        tiktok: "https://www.tiktok.com/@marcjacobs",
+        twitter: null,
+        youtube: "https://www.youtube.com/marcjacobs",
+        linkedin: "https://www.linkedin.com/company/marc-jacobs/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2806144094",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5f18211c000000000100679d"
+    },
+    {
+        name: "Moynat",
+        client: ["LVMH"],
+        owner: [STAFF.E, STAFF.B],
+        instagram: "https://www.instagram.com/moynat",
+        facebook: "https://www.facebook.com/MOYNAT/",
+        tiktok: "https://www.tiktok.com/@moynat",
+        twitter: null,
+        youtube: "https://www.youtube.com/@MoynatParis",
+        linkedin: "https://www.linkedin.com/company/moynat/posts/?feedView=all",
+        weibo: "https://weibo.com/u/3228247644",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/55b6010e41a2b30bc8893e04"
+    },
+    {
+        name: "Patou",
+        client: ["LVMH","L'Occitane"],
+        owner: [STAFF.E, STAFF.B],
+        instagram: "https://www.instagram.com/patou",
+        facebook: "https://www.facebook.com/PatouParisHeadquarter",
+        tiktok: "https://www.tiktok.com/@patou",
+        twitter: null,
+        youtube: "https://www.youtube.com/@patouofficial",
+        linkedin: "https://www.linkedin.com/company/jean-patou/posts/?feedView=all",
+        weibo: null,
+        Xiaohongshu: null
+    },
+    {
+        name: "RIMOWA",
+        client: ["LVMH"],
+        owner: [STAFF.E, STAFF.B],
+        instagram: "https://www.instagram.com/rimowa",
+        facebook: "https://www.facebook.com/Rimowa/",
+        tiktok: "https://www.tiktok.com/@rimowa",
+        twitter: null,
+        youtube: "https://www.youtube.com/RIMOWA1898",
+        linkedin: "https://www.linkedin.com/company/rimowa/posts/?feedView=all",
+        weibo: "https://weibo.com/u/5470353808",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/6062d4cf0000000001001940"
+    },
+    {
+        name: "KVD Vegan Beauty",
+        client: ["LVMH"],
+        owner: [STAFF.F],
+        instagram: "https://www.instagram.com/kvdbeauty",
+        facebook: { url: "https://www.facebook.com/KVDBeauty/", Note: "2025-09"},
+        tiktok: "https://www.tiktok.com/@kvdbeauty",
+        twitter: { url: "https://twitter.com/kvdbeauty", Note: "2024-07"},
+        youtube: { url: "https://www.youtube.com/@kvdbeauty", Note: "2024-07"},
+        linkedin: null,
+        weibo: null,
+        Xiaohongshu: null
+    },
+    {
+        name: "Coach",
+        client: ["LVMH"],
+        owner: [STAFF.F,STAFF.A],
+        instagram: "https://www.instagram.com/coach/",
+        facebook: "https://www.facebook.com/coach/",
+        tiktok: "https://www.tiktok.com/@coach",
+        twitter: "https://twitter.com/Coach",
+        youtube: "https://www.youtube.com/@coach",
+        linkedin: "https://www.linkedin.com/company/coach/posts/?feedView=all",
+        weibo: "https://weibo.com/coachchina",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5a83962111be1068400a6961"
+    },
+    {
+        name: "Chanel",
+        client: ["LVMH","Swarovski", "Chanel Fashion", "Richemont"],
+        owner: [STAFF.F, STAFF.A],
+        instagram: "https://www.instagram.com/chanelofficial/",
+        facebook: "https://www.facebook.com/chanel/",
+        tiktok: "https://www.tiktok.com/@chanelofficial",
+        twitter: "https://twitter.com/CHANEL",
+        youtube: null,
+        linkedin: "https://www.linkedin.com/company/chanel/posts/?feedView=all",
+        weibo: "https://weibo.com/u/1892475055",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5ceca9300000000005001c9c?xsec_token=ABpygkP85-GUJsd6G3Ljylr_zEUyf2MH9Jje__HZUCCFw%3D&xsec_source=pc_search"
+    },
+    {
+        name: "Fendi",
+        client: ["LVMH", "Chanel Fashion"],
+        owner: [STAFF.F, STAFF.A],
+        instagram: "https://www.instagram.com/fendi/",
+        facebook: "https://www.facebook.com/Fendi/",
+        tiktok: "https://www.tiktok.com/@fendi",
+        twitter: "https://twitter.com/Fendi",
+        youtube: "https://www.youtube.com/@Fendi",
+        linkedin: "https://www.linkedin.com/company/fendi/posts/?feedView=all",
+        weibo: "https://weibo.com/fendi",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5bfb6e120585550001219e07"
+    },
+    {
+        name: "Dior",
+        client: ["LVMH","Swarovski", "Chanel Fashion", "Richemont"],
+        owner: [STAFF.F, STAFF.A],
+        instagram: "https://www.instagram.com/dior/",
+        facebook: "https://www.facebook.com/Dior/",
+        tiktok: "https://www.tiktok.com/@dior",
+        twitter: "https://x.com/Dior",
+        youtube: "https://www.youtube.com/@Dior/featured",
+        linkedin: "https://www.linkedin.com/company/christian-dior-couture/posts/?feedView=all",
+        weibo: "https://weibo.com/dior",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5c9ca4bf000000001000e11e?xsec_token=ABIKOXj79wTGDV61GfJqly6BjtrvhqzFDKz1Q7TzYXQVY%3D&xsec_source=pc_search"
+    },
+    {
+        name: "Gucci",
+        client: ["LVMH","Swarovski", "Chanel Fashion", "Richemont"],
+        owner: [STAFF.F, STAFF.A],
+        instagram: "https://www.instagram.com/gucci/",
+        facebook: "https://www.facebook.com/GUCCI/",
+        tiktok: "https://www.tiktok.com/@gucci",
+        twitter: [
+            { url: "https://twitter.com/gucci", region: "Global", priority: true },
+            { url: "https://twitter.com/gucci_jp", region: "Japan", Note: "Japan", priority: true }
+        ],
+        youtube: "https://www.youtube.com/@gucci",
+        linkedin: "https://www.linkedin.com/company/gucci/posts/?feedView=all",
+        weibo: "https://weibo.com/gucci",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5bec11c3f7266300013670e0"
+    },
+    {
+        name: "Hermès",
+        client: ["LVMH", "Chanel Fashion", "Richemont"],
+        owner: [STAFF.F, STAFF.A],
+        instagram: "https://www.instagram.com/hermes/",
+        facebook: "https://www.facebook.com/hermes/",
+        tiktok: null,
+        twitter: "https://twitter.com/Hermes_Paris",
+        youtube: "https://www.youtube.com/@hermes",
+        linkedin: "https://www.linkedin.com/company/hermes-group/posts/?feedView=all",
+        weibo: "https://weibo.com/hermesofficial",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5cd43904000000001203ef1c"
+    },
+    {
+        name: "Gucci Beauty",
+        client: ["Puig"],
+        owner: [STAFF.F, STAFF.A],
+        instagram: "https://www.instagram.com/guccibeauty/",
+        facebook: null,
+        tiktok: null,
+        twitter: null,
+        youtube: null,
+        linkedin: null,
+        weibo: null,
+        Xiaohongshu: null
+    },
+    {
+        name: "Byredo",
+        client: ["Chanel Beauty"],
+        owner: [STAFF.F],
+        official_web: "https://www.byredo.com/eu_fr",
+        instagram: "https://www.instagram.com/officialbyredo/",
+        facebook: "https://www.facebook.com/byredo",
+        tiktok: "https://www.tiktok.com/@byredo",
+        twitter: null,
+        youtube: null,
+        linkedin: "https://www.linkedin.com/company/byredo/posts/?feedView=all",
+        weibo: "https://weibo.com/u/6474306226",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5ca2c8de000000001003de11"
+    },
+    {
+        name: "Carolina Herrera Beauty",
+        client: ["Chanel Beauty"],
+        owner: [STAFF.F],
+        official_web: null,
+        instagram: "https://www.instagram.com/carolinaherrera/",
+        facebook: "https://www.facebook.com/CarolinaHerreraNY/",
+        tiktok: "https://www.tiktok.com/@carolinaherreraofficial",
+        twitter: "https://x.com/HouseofHerrera",
+        youtube: "https://www.youtube.com/carolinaherrera",
+        linkedin: "https://www.linkedin.com/company/carolina-herrera/posts/?feedView=all",
+        weibo: "https://weibo.com/u/5449820394",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/62ea33e2000000001f0055e6"
+    },
+    {
+        name: "Skims",
+        client: ["Chanel Fashion"],
+        owner: [STAFF.F],
+        official_web: { url: "https://skims.com/en-fr", Note: "France" },
+        instagram: "https://www.instagram.com/skims/",
+        facebook: "https://www.facebook.com/SKIMSbody/",
+        tiktok: "https://www.tiktok.com/@skims",
+        twitter: null, // 原文中 Twitter 提供的是 TikTok 链接，故设为 null
+        youtube: "https://www.youtube.com/c/skims",
+        linkedin: null,
+        weibo: null,
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/67be1f4d000000000e01e7dd"
+    },
+    {
+        name: "De Beers",
+        client: ["Richemont"],
+        owner: [STAFF.F, STAFF.B],
+        official_web: null,
+        instagram: "https://www.instagram.com/debeersofficial/",
+        facebook: "https://www.facebook.com/DeBeers",
+        tiktok: "https://www.tiktok.com/@debeersofficial",
+        twitter: "https://x.com/debeers",
+        youtube: "https://www.youtube.com/@debeers",
+        linkedin: "https://www.linkedin.com/company/debeersgroup/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2464641902",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5a24fae711be107e90dc3c62"
+    },
+    {
+        name: "AMI",
+        client: ["Lacoste"],
+        owner: [STAFF.F, STAFF.A],
+        official_web: null,
+        instagram: "https://www.instagram.com/amiparis/",
+        facebook: "https://www.facebook.com/AMIPARIS",
+        tiktok: "https://www.tiktok.com/@amiparis",
+        twitter: null,
+        youtube: "https://www.youtube.com/@amiparis",
+        linkedin: "https://www.linkedin.com/company/ami-paris/posts/?feedView=all",
+        weibo: "https://weibo.com/u/6568401638",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5bbb7aea219cd900019ce1e2"
+    },
+    {
+        name: "FILA",
+        client: ["Lacoste"],
+        owner: [STAFF.F],
+        official_web: null,
+        instagram: [
+            { url: "https://www.instagram.com/fila_global/", region: "Global", priority: true },
+            { url: "https://www.instagram.com/filausa/", region: "USA"},
+            { url: "https://www.instagram.com/fila_japan_official/?hl=en", region: "Japan"},
+            { url: "https://www.instagram.com/filaph/?hl=en", region: "Philippines"},
+            { url: "https://www.instagram.com/fila_global/", region: "Global"},
+
+
+            { url: "https://www.instagram.com/fila_korea/", region: "Korea", priority: true }
+        ],
+        facebook: [
+            { url: "https://www.facebook.com/Filaglobalofficial/", region: "Global", priority: true },
+            { url: "https://www.facebook.com/filaeurope/", region: "Europe", priority: true },
+            { url: "https://www.facebook.com/filahkg", region: "Hong Kong"},
+            { url: "https://www.facebook.com/filaeurope/?locale=fr_FR", region: "Europe", Note: "Europe" },
+            { url: "https://www.facebook.com/filausa/", region: "USA"},
+            { url: "https://www.facebook.com/FilaStyle/", region: "UK"},
+            { url: "https://www.facebook.com/filaindia/", region: "India"},
+            { url: "https://www.facebook.com/filahkg/", region: "Hong Kong"},
+            { url: "https://www.facebook.com/FILAtennisOfficial/", Note: "Tennis"},
+            { url: "https://www.facebook.com/filaindia/", region: "India"},
+
+        ],
+        tiktok: null,
+        twitter: null,
+        youtube: { url: "https://www.youtube.com/user/filakorea/", Note: "Korea" },
+        linkedin: null,
+        weibo: "https://weibo.com/u/1805556960",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5c174d41000000000500c6b0"
+    },
+    {
+        name: "NIKE",
+        client: ["Lacoste"],
+        owner: [STAFF.F],
+        official_web: null,
+        instagram: [
+            { url: "https://www.instagram.com/nike/", Note: "Main", priority: true },
+            { url: "https://www.instagram.com/nikerunning/", Note: "Running", priority: true },
+            { url: "https://www.instagram.com/nikesportswear/", Note: "Sportswear", priority: true }
+        ],
+        facebook: null,
+        tiktok: "https://www.tiktok.com/@nike",
+        twitter: "https://twitter.com/Nike",
+        youtube: "https://www.youtube.com/@nike/videos",
+        linkedin: "https://www.linkedin.com/company/nike/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2188971353",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5c65661700000000100130cf"
+    },
+    {
+        name: "RALPH LAUREN",
+        client: ["Lacoste"],
+        owner: [STAFF.F],
+        official_web: null,
+        instagram: [
+            { url: "https://www.instagram.com/ralphlauren", Note: "Main", priority: true },
+            { url: "https://www.instagram.com/poloralphlauren/", Note: "Polo", priority: true }
+        ],
+        facebook: "https://www.facebook.com/RalphLaurenFrance/",
+        tiktok: "https://www.tiktok.com/@ralphlauren",
+        twitter: "https://twitter.com/ralphlauren",
+        youtube: "https://www.youtube.com/@RalphLauren",
+        linkedin: "https://www.linkedin.com/company/ralph-lauren/posts/?feedView=all",
+        weibo: "https://weibo.com/u/5284449501",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5ce36580000000001103c055"
+    },
+    {
+        name: "Charlotte Tilbury",
+        client: ["LVMH"],
+        owner: [STAFF.E],
+        official_web: "https://www.charlottetilbury.com/fr",
+        instagram: [
+            { url: "https://www.instagram.com/charlottetilbury/", Note: "Main", priority: true },
+            { url: "https://www.instagram.com/charlottetilburyskincare/", Note: "Skincare", priority: true },
+            { url: "https://www.instagram.com/charlottetilburyarabia/?g=5", Note: "MBE - Arabia" }
+        ],
+        facebook: "https://www.facebook.com/charlottetilbury",
+        tiktok: "https://www.tiktok.com/@charlottetilbury",
+        twitter: "https://twitter.com/CTilburyMakeup",
+        youtube: "https://www.youtube.com/@CharlotteTilbury",
+        linkedin: "https://www.linkedin.com/company/charlotte-tilbury-beauty-ltd/posts/?feedView=all",
+        weibo: "https://weibo.com/charlottetilbury",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5caea67900000000110281b0"
+    },
+    {
+        name: "Cha Ling",
+        client: ["LVMH"],
+        owner: [STAFF.E],
+        official_web: null,
+        instagram: "https://www.instagram.com/chalinglespritduthe/",
+        facebook: null,
+        tiktok: null,
+        twitter: null,
+        youtube: null,
+        linkedin: null,
+        weibo: "https://weibo.com/u/6039045707",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5481d151e7798908a409cf07"
+    },
+    {
+        name: "Bobbi Brown",
+        client: ["LVMH"],
+        owner: [STAFF.E],
+        official_web: "https://www.bobbibrowncosmetics.fr/",
+        instagram: [
+            { url: "https://www.instagram.com/bobbibrown/", region: "Global", priority: true },
+            { url: "https://www.instagram.com/bobbibrownjapan/", region: "Japan", priority: true },
+            { url: "https://www.instagram.com/bobbibrownthailand/", region: "Thailand", priority: true},
+            { url: "https://www.instagram.com/bobbibrownfrance/", region: "France" },
+            { url: "https://www.instagram.com/bobbibrownuk/", region: "UK" },
+            { url: "https://www.instagram.com/bobbibrownes/", region: "Spain" },
+            { url: "https://www.instagram.com/bobbibrowngermany/", region: "Germany" },
+            { url: "https://www.instagram.com/bobbibrownturkiye/", region: "Turkey" },
+            { url: "https://www.instagram.com/bobbibrownme/", region: "Middle East" },
+            { url: "https://www.instagram.com/bobbibrownindia/", region: "India" },
+            { url: "https://www.instagram.com/bobbibrowntaiwan/", region: "Taiwan", Note: "Taiwan" },
+            { url: "https://www.instagram.com/bobbibrownhongkong/", region: "Hong Kong", Note: "Hong Kong" },
+            { url: "https://www.instagram.com/bobbibrownil/", region: "Israel" },
+            { url: "https://www.instagram.com/bobbibrownkorea/", region: "Korea" },
+            { url: "https://www.instagram.com/bobbibrownsg/", region: "Singapore" }
+        ],
+        facebook: { url: "https://www.facebook.com/BobbiBrownFrance", Note: "2024-07" },
+        tiktok: "https://www.tiktok.com/@bobbibrowncosmetics",
+        twitter: [
+            { url: "https://x.com/BobbiBrown_TH", region: "Thailand"},
+            { url: "https://x.com/BobbiBrown", region: "Global", Note:"2021-01"},
+            { url: "https://x.com/bobbibrown_jp", region: "Japan", priority: true},
+
+        ],
+        youtube: "https://www.youtube.com/@bobbibrown",
+        linkedin: "https://www.linkedin.com/company/bobbi-brown-cosmetics/",
+        weibo: "https://weibo.com/bobbibrownchina",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/599295dc82ec39031fd35ce3"
+    },
+    {
+        name: "Benefit",
+        client: ["LVMH"],
+        owner: [STAFF.E],
+        official_web: "https://www.benefitcosmetics.com/fr-be/brows.html",
+        instagram: [
+            { url: "https://www.instagram.com/benefitcosmetics/", region: "Global", priority: true },          
+            { url: "https://www.instagram.com/benefitcosmeticsuk/", region: "UK" },
+            { url: "https://www.instagram.com/benefitmiddleeast/", region: "Middle East" },
+            { url: "https://www.instagram.com/benefitcosmeticskorea/", region: "Korea" },
+            { url: "https://www.instagram.com/benefitfrance/", region: "France" },
+            { url: "https://www.instagram.com/benefit_ire/", region: "Ireland" },
+            { url: "https://www.instagram.com/benefitindia/", region: "India" },
+            { url: "https://www.instagram.com/benefitnetherlands/", region: "Netherlands" },
+            { url: "https://www.instagram.com/benefitbrasil/", region: "Brazil" },
+            { url: "https://www.instagram.com/benefitspain/", region: "Spain" },
+            { url: "https://www.instagram.com/benefitperu/", region: "Peru" },
+            { url: "https://www.instagram.com/benefitturkiye/", region: "Turkey" },
+            { url: "https://www.instagram.com/benefitsouthafrica/", region: "South Africa" },
+            { url: "https://www.instagram.com/benefitbelgium/", region: "Belgium" },
+            { url: "https://www.instagram.com/benefitindonesia/", region: "Indonesia" },
+            { url: "https://www.instagram.com/benefittaiwan/", region: "Taiwan" }
+        ],
+        facebook: "https://www.facebook.com/BenefitCosmeticsFrance/?brand_redir=77597913559",
+        tiktok: "https://www.tiktok.com/@benefitcosmetics",
+        twitter: "https://twitter.com/BenefitBeauty",
+        youtube: "https://www.youtube.com/@benefitcosmetics",
+        linkedin: "https://www.linkedin.com/company/benefitcosmetics/posts/?feedView=all",
+        weibo: {url:"https://weibo.com/benefit", Note: "No more in use"},
+        Xiaohongshu:null
+    },
+    {
+        name: "Tom Ford",
+        client: ["Chanel Beauty"],
+        owner: [STAFF.E],
+        official_web: "https://www.tomfordbeauty.com/",
+        instagram: "https://www.instagram.com/tomfordbeauty/",
+        facebook: "https://www.facebook.com/tomfordbeauty",
+        tiktok: "https://www.tiktok.com/@tomfordbeauty?lang=en",
+        twitter: "https://twitter.com/TOMFORD",
+        youtube: "https://www.youtube.com/@TomFord",
+        linkedin: "https://www.linkedin.com/company/tom-ford-beauty/posts/?feedView=all",
+        weibo: "https://weibo.com/tomfordbeauty",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/571f71774775a762e6b2a84a"
+    },
+    {
+        name: "Le Labo",
+        client: ["Puig", "L'Occitane"],
+        owner: [STAFF.E],
+        official_web: "https://www.lelabofragrances.com/fr/?gad_source=1&gbraid=0AAAAADRLGSQqhJsvrxFQVWHMKtTNKuDya&gclid=Cj0KCQjw_JzABhC2ARIsAPe3ynpJmdUE9b51n9oP_4hdErYDKbH8h0cxX18LcdDi4wU4QdTsHeXE6bUaAt_AEALw_wcB",
+        instagram: "https://www.instagram.com/lelabofragrances/",
+        facebook: { url: "https://www.facebook.com/lelabofragrances/?locale=fr_FR", Note: "No Contnet"},
+        tiktok: null,
+        twitter: null,
+        youtube: "https://www.youtube.com/@lelabofragrances/videos",
+        linkedin: {url: "https://www.linkedin.com/company/le-labo-inc./", Note: "No Content"},
+        weibo: null,
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/620119470000000021028e16"
+    },
+    {
+        name: "Editions de Parfums Frederic Malle",
+        client: ["Puig"],
+        owner: [STAFF.E],
+        official_web: { url: "https://www.fredericmalle.eu/fr-e-uf/", Note: "France" },
+        instagram: null,
+        facebook: null,
+        tiktok: null,
+        twitter: null,
+        youtube: null,
+        linkedin: null,
+        weibo: "https://weibo.com/u/7439443251",
+        Xiaohongshu: null
+    },
+    {
+        name: "Diptyque",
+        client: ["Puig", "L'Occitane"],
+        owner: [STAFF.E],
+        official_web: "https://www.diptyqueparis.com/fr_fr/?_mkpid=a_3568&_mkpc=%5BFR%5D%5BB%5D%20SE_FR_BRA-Brand-Exact&_mkpd=s%7C%7Cc%7C578518950653%7Cdiptyque%7Ce%7C&wiz_campaign=1016163098&gad_source=1&gbraid=0AAAAADEgS-gpY2_5bz-7LnhDUTi0S8LLh&gclid=Cj0KCQjw_JzABhC2ARIsAPe3ynqOTYRdVHdutpbHMeTqbNN4TI2DCpuwCe8UZuFD7kUb1Gv2VObOvAUaAnaREALw_wcB",
+        instagram: "https://www.instagram.com/diptyque/",
+        facebook: "https://www.facebook.com/diptyque.fr/",
+        tiktok: null,
+        twitter: {url: "https://x.com/diptyqueparis", Note: "2023-08"},
+        youtube: "https://www.youtube.com/@DiptyqueParis",
+        linkedin: "https://www.linkedin.com/company/diptyque-paris-/posts/?feedView=all",
+        weibo: "https://weibo.com/diptyqueparis",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/53c77f69b4c4d67c3420aaa2"
+    },
+    {
+        name: "Creed",
+        client: ["Puig","Chanel Beauty"],
+        owner: [STAFF.E],
+        official_web: "https://www.creedfragrance.fr/",
+        instagram: "https://www.instagram.com/creedfragrance/",
+        facebook: "https://www.facebook.com/creedfragrance/",
+        tiktok: "https://www.tiktok.com/@creedfragrance?lang=en",
+        twitter: {url:"https://x.com/creedfragrances", Note: "2023-08"},
+        youtube: {url:"https://www.youtube.com/channel/UCkZUgNpVcSKzqSvqOVlVuDw", Note: "No content"},
+        linkedin: "https://www.linkedin.com/company/creedfragrances/posts/?feedView=all",
+        weibo: "https://weibo.com/u/7581141434",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/6100ddfe000000002002947d"
+    },
+    {
+        name: "Armani Beauty",
+        client: ["Puig"],
+        owner: [STAFF.E],
+        official_web: "https://www.armanibeauty.fr/?srsltid=AfmBOorTORXzcBgrwgscMEBRqD5qtNC3HXpFTp9j07i0hzON_Na3oI5F",
+        instagram: "https://www.instagram.com/armanibeauty/",
+        facebook: { url: "https://www.facebook.com/armanibeautyFR/", Note: "2024-11" },
+        tiktok: "https://www.tiktok.com/@armanibeauty?lang=en",
+        twitter: null,
+        youtube: "https://www.youtube.com/@ArmaniBeauty",
+        linkedin: "https://www.linkedin.com/company/giorgio-armani/posts/?feedView=all",
+        weibo: "https://weibo.com/giorgioarmanibeauty",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/558e8d6467bc654ee7b73959"
+    },
+    {
+        name: "YSL Beauté",
+        client: ["LVMH", "Puig", "L'Occitane"],
+        owner: [STAFF.E],
+        official_web: "https://www.yslbeauty.fr/",
+        instagram: "https://www.instagram.com/yslbeauty/",
+        facebook: "https://www.facebook.com/yslbeauty",
+        tiktok: "https://www.tiktok.com/@yslbeauty",
+        twitter: "https://twitter.com/yslbeauty",
+        youtube: "https://www.youtube.com/@YSLBeautyOfficial",
+        linkedin: null,
+        weibo: "https://weibo.com/yslbeauty",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/55628f35484fb6463b075a97"
+    },
+    {
+        name: "Parfums Christian Dior",
+        client: ["LVMH", "Puig", "L'Occitane"],
+        owner: [STAFF.E],
+        official_web: "https://www.dior.com/fr_fr/beauty",
+        instagram: "https://www.instagram.com/diorbeauty/",
+        facebook: "https://www.facebook.com/Dior/?locale=fr_FR",
+        tiktok: "https://www.tiktok.com/@dior",
+        twitter: null,
+        youtube: "https://www.youtube.com/@Dior/videos",
+        linkedin: "https://www.linkedin.com/company/parfums-christian-dior/posts/?feedView=all",
+        weibo: "https://weibo.com/makeupdior",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5c9ca4bf000000001000e11e?xsec_token=ABd7KFC9nKtrMCitCpF3k35zvxyX2mXrF1DP7hkS6Iyf0%3D&xsec_source=pc_search"
+    },
+    {
+        name: "Maison Francis Kurkdjian",
+        client: ["LVMH", "Puig"],
+        owner: [STAFF.E],
+        official_web: "https://www.franciskurkdjian.com/eu-fr?gad_source=1&gbraid=0AAAAADYVnceBRIwwyvfHW0wpBhQl4CM21&gclid=Cj0KCQjw_JzABhC2ARIsAPe3ynrkuz-u0Ltq1-AIvgqZWVIE1I4VjhM6DpmF8lOz4TvJktDy8frNVZkaAu8xEALw_wcB",
+        instagram: "https://www.instagram.com/maisonfranciskurkdjian/",
+        facebook: "https://www.facebook.com/franciskurkdjian",
+        tiktok: "https://www.tiktok.com/@maisonfranciskurkdjian?lang=en",
+        twitter: null,
+        youtube: "https://www.youtube.com/@MaisonFrancisKurkdjianParis",
+        linkedin: "https://www.linkedin.com/company/parfum-francis-kurkdjian/posts/?feedView=all",
+        weibo: "https://weibo.com/mfkparis",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/606ae4d40000000001002302"
+    },
+    {
+        name: "Jo Malone",
+        client: ["LVMH", "Puig", "L'Occitane"],
+        owner: [STAFF.E],
+        official_web: "https://www.jomalone.fr/",
+        instagram: "https://www.instagram.com/jomalonelondon/",
+        facebook: "https://www.facebook.com/JoMaloneLondon",
+        tiktok: "https://www.tiktok.com/@jomalonelondon",
+        twitter: "https://twitter.com/JoMaloneLondon",
+        youtube: "https://www.youtube.com/@jomalonelondon/videos",
+        linkedin: "https://www.linkedin.com/company/jomalonelondon/posts/?feedView=all",
+        weibo: "https://weibo.com/jomalonelondon",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/55ab0a395894467a3770f651"
+    },
+    {
+        name: "Chanel Parfums",
+        client: ["LVMH", "Puig", "L'Occitane"],
+        owner: [STAFF.E],
+        official_web: "https://www.chanel.com/fr/",
+        instagram: "https://www.instagram.com/chanel.beauty/",
+        facebook: "https://www.facebook.com/ChanelFR",
+        tiktok: "https://www.tiktok.com/@chanel.beauty?lang=en",
+        twitter: null,
+        youtube: "https://www.youtube.com/@CHANEL/featured",
+        linkedin: "https://www.linkedin.com/company/chanel/posts/?feedView=all",
+        weibo: "https://weibo.com/u/1892475055",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5ebe40800000000001001740"
+    },
+    {
+        name: "By Kilian",
+        client: ["LVMH", "Puig"],
+        owner: [STAFF.E],
+        official_web: "https://www.bykilian.fr/",
+        instagram: "https://www.instagram.com/kilianparis/",
+        facebook: "https://www.facebook.com/KilianParis",
+        tiktok: null,
+        twitter: {url: "https://twitter.com/bykilianparis", Note:"2017"},
+        youtube: "https://www.youtube.com/@Kilian_Paris",
+        linkedin: "https://www.linkedin.com/company/kilianparis/?originalSubdomain=fr",
+        weibo: "https://weibo.com/bykilian",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5cfdce2f0000000010013ad3"
+    },
+    {
+        name: "JW Anderson",
+        client: ["LVMH"],
+        owner: [STAFF.E, STAFF.B],
+        official_web: null,
+        instagram: "https://www.instagram.com/jw_anderson/",
+        facebook: "https://www.facebook.com/jwanderson.london",
+        tiktok: "https://www.tiktok.com/@jw_anderson/",
+        twitter: null,
+        youtube: "https://www.youtube.com/jw_anderson",
+        linkedin: "https://www.linkedin.com/company/j-w-anderson/posts/?feedView=all",
+        weibo: "https://weibo.com/u/5955021997",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5cbf292400000000120113cb"
+    },
+    {
+        name: "Michael Kors",
+        client: ["Swarovski"],
+        owner: [STAFF.E, STAFF.B],
+        official_web: null,
+        instagram: "https://www.instagram.com/michaelkors/",
+        facebook: "https://www.facebook.com/MichaelKors/",
+        tiktok: "https://www.tiktok.com/@michaelkors/",
+        twitter: "https://twitter.com/michaelkors/",
+        youtube: "https://www.youtube.com/michaelkors",
+        linkedin: "https://www.linkedin.com/company/michael-kors/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2497052030",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5c9b6e6b000000001100095f"
+    },
+    {
+        name: "Pandora",
+        client: ["Swarovski"],
+        owner: [STAFF.E, STAFF.B],
+        official_web: null,
+        instagram: "https://www.instagram.com/theofficialpandora",
+        facebook: "https://www.facebook.com/PandoraFrance", 
+        tiktok: "https://www.tiktok.com/@TheOfficialPandora",
+        twitter: { url: "https://twitter.com/PANDORA_NA", Note: "North America" },
+        youtube: "https://www.youtube.com/TheOfficialPandora",
+        linkedin: "https://www.linkedin.com/company/pandora-a-s/posts/?feedView=all",
+        weibo: "https://weibo.com/u/6179494863",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5c7c9a8000000000170251fd?xsec_token=ABElc2n3HxGNUJyCTAHXLeiaBHHUe1fl0dknbaNMHFAMY%3D&xsec_source=pc_search"
+    },
+    {
+        name: "ADIDAS",
+        client: ["Lacoste"],
+        owner: [STAFF.E],
+        official_web: null,
+        instagram: [
+            { url: "https://www.instagram.com/adidas/", Note: "Main", priority: true },
+            { url: "https://www.instagram.com/adidasoriginals/", Note: "Originals", priority: true }
+        ],
+        facebook: [
+            { url: "https://www.facebook.com/adidas", Note: "Main", priority: true  },
+            { url: "https://www.facebook.com/adidasoriginals", Note: "Originals", priority: true  }
+        ],
+        tiktok: "https://www.tiktok.com/@adidas",
+        twitter: [
+            { url: "https://twitter.com/adidas", Note: "Main", priority: true  },
+            { url: "https://twitter.com/adidasoriginals", Note: "Originals", priority: true  }
+        ],
+        youtube: [
+            { url: "https://www.youtube.com/@adidas", Note: "Main", priority: true  },
+            { url: "https://www.youtube.com/@adidasOriginals", Note: "Originals", priority: true  }
+        ],
+        linkedin: "https://www.linkedin.com/company/adidas/posts/?feedView=all",
+        weibo: [
+            { url: "https://weibo.com/u/1892375367", Note: "Main", priority: true  },
+            { url: "https://weibo.com/u/1759328987", Note: "Originals", priority: true  },
+            { url: "https://weibo.com/u/1741471715", Note: "Football", priority: true  },
+            { url: "https://weibo.com/u/1746524140", Note: "Hong Kong 2017" },
+            { url: "https://weibo.com/u/3253905165", Note: "Women 2021"},
+            { url: "https://weibo.com/u/1746287487", Note: "Running 2023"},
+
+        ],
+        Xiaohongshu: [
+            { url: "https://www.xiaohongshu.com/user/profile/5b10c1a1f7e8b90a8d7040f9", Note: "Main" , priority: true },
+            { url: "https://www.xiaohongshu.com/user/profile/605b2bad000000000100269d?xsec_token=ABlSwtyN64YKsx4w0vy8Bjv3uldQrwu21SoFp3rTnmZgg%3D&xsec_source=pc_search", Note: "Sportswear" , priority: true },
+            { url: "https://www.xiaohongshu.com/user/profile/5bd1d5a8d353ab0001759118", Note: "Originals", priority: true  }
+        ]
+    },
+    {
+        name: "UNIQLO",
+        client: ["Lacoste"],
+        owner: [STAFF.E],
+        official_web: "https://www.uniqlo.com/fr/fr/",
+        instagram: [
+            { url: "https://www.instagram.com/uniqlo/", region: "Global", priority: true },
+            { url: "https://www.instagram.com/uniqloeurope/", region: "Europe", Note:"Europe" },
+            { url: "https://www.instagram.com/uniqlo_jp/", region: "Japan" },
+            { url: "https://www.instagram.com/uniqlousa/", region: "USA" },
+            { url: "https://www.instagram.com/uniqlofr/", region: "France" },
+            { url: "https://www.instagram.com/uniqlo_hk_macau/", region: "Hong Kong", Note:"HK/Macau" },
+            { url: "https://www.instagram.com/uniqlo_taiwan/", region: "Taiwan", Note:"Taiwan" },
+            { url: "https://www.instagram.com/uniqlophofficial/", region: "Philippines" },
+            { url: "https://www.instagram.com/uniqlovnam/", region: "Vietnam" },
+            { url: "https://www.instagram.com/uniqloau/", region: "Australia" },
+            { url: "https://www.instagram.com/uniqloin/", region: "India" },
+            { url: "https://www.instagram.com/uniqloindonesia/", region: "Indonesia" },
+            { url: "https://www.instagram.com/uniqlokr/", region: "Korea" },
+            { url: "https://www.instagram.com/uniqlosg/", region: "Singapore" },
+            { url: "https://www.instagram.com/uniqlomyofficial/", region: "Malaysia" },
+            { url: "https://www.instagram.com/uniqlothailand/", region: "Thailand" },
+            { url: "https://www.instagram.com/uniqlo_hawaii/", region: "Hawaii", Note:"Hawaii" },
+            { url: "https://www.instagram.com/uniqlocanada/", region: "Canada" }
+        ],
+        facebook: "https://www.facebook.com/uniqlo",
+        tiktok: "https://www.tiktok.com/@uniqloeurope",
+        twitter: [
+            { url: "https://twitter.com/UNIQLO_JP", region: "Japan", priority: true },
+            { url: "https://twitter.com/UniqloUSA", region: "USA", priority: true }
+        ],
+        youtube: [
+            { url: "https://www.youtube.com/@UNIQLO", region: "Global", priority: true },
+            { url: "https://www.youtube.com/@uniqlo_eu", Note: "Europe", priority: true }
+        ],
+        linkedin: "https://www.linkedin.com/company/uniqlo/posts/?feedView=all",
+        weibo: [
+            { url: "https://weibo.com/u/2212667031", Note: "Main", priority: true },
+            { url: "https://weibo.com/u/3494409723", Note: "网络旗舰店"},
+            { url: "https://weibo.com/u/6086611008", Note: "种草社"},
+            ],
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5bd6b177d4c0880001bf7f4e"
+    },
+    {
+        name: "PUMA",
+        client: ["Lacoste"],
+        owner: [STAFF.E],
+        official_web: "https://eu.puma.com/fr/fr/home?utm_source=google&utm_medium=cpc&utm_campaign=BS_GGL_FR_FR_TXT_Brand_Core_Exact_SEA_BRAND&gad_source=1&gclid=Cj0KCQjw2N2_BhCAARIsAK4pEkXorXKbAwwPxmSHMogN_JdTFN0cirZ-n2L5oKIGPiVC7ONa6gF-2CgaAnrhEALw_wcB",
+        instagram: [
+            { url: "https://www.instagram.com/puma/", Note: "Main", priority: true },
+            { url: "https://www.instagram.com/pumafrance/", region:"France", Note: "France", priority: true },           
+            { url: "https://www.instagram.com/pumasportstyle/", Note: "Sportstyle", priority: true },
+            { url: "https://www.instagram.com/pumarunning/", Note: "Running", priority: true }
+        ],
+        facebook: "https://www.facebook.com/PUMAFrance/?brand_redir=56470448215",
+        tiktok: "https://www.tiktok.com/@puma",
+        twitter: "https://twitter.com/PUMA",
+        youtube: "https://www.youtube.com/puma",
+        linkedin: "https://www.linkedin.com/company/puma/posts/?feedView=all",
+        weibo: "https://weibo.com/pumablog",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/59c242465e87e74cad2c137f"
+    },
+    {
+        name: "HUGO BOSS",
+        client: ["Lacoste"],
+        owner: [STAFF.E],
+        official_web: "https://www.hugoboss.com/fr/home",
+        instagram: [
+            {url: "https://www.instagram.com/boss/", priority: true},
+            {url: "https://www.instagram.com/luxuryfashion.g/", Note:"fashion"},
+        ],
+        facebook: "https://www.facebook.com/hugoboss",
+        tiktok: "https://www.tiktok.com/@boss",
+        twitter: "https://twitter.com/HUGOBOSS",
+        youtube: "https://www.youtube.com/@boss",
+        linkedin: "https://www.linkedin.com/company/hugo-boss/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2329770312",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5c0653a8000000000700a50a"
+    },
+    {
+        name: "Pomellato",
+        client: ["Richemont"],
+        owner: [STAFF.E],
+        official_web: "https://www.pomellato.com/fr_fr",
+        instagram: "https://www.instagram.com/pomellato",
+        facebook: "https://www.facebook.com/Pomellato",
+        tiktok: "https://www.tiktok.com/@pomellato",
+        twitter: null,
+        youtube: "https://www.youtube.com/user/PomellatoOfficial",
+        linkedin: "https://www.linkedin.com/company/pomellato/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2175173250",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5bd1609535c11a0001bdb8af"
+    },
+    {
+        name: "Grand Seiko",
+        client: ["Richemont"],
+        owner: [STAFF.E],
+        official_web: "https://www.grandseikoboutique.eu/fr/",
+        instagram: [
+            { url: "https://www.instagram.com/grandseikoofficial/", region: "Global", priority: true },
+            { url: "https://www.instagram.com/grandseikoeurope/", Note: "Europe" },
+            { url: "https://www.instagram.com/grandseikousa/", region: "USA" },
+            { url: "https://www.instagram.com/grandseikojapan/", region: "Japan" },
+            { url: "https://www.instagram.com/grandseikouk/", region: "UK" },
+            { url: "https://www.instagram.com/grandseikotaiwan/", region: "Taiwan" },
+            { url: "https://www.instagram.com/grandseikohk/", region: "Hong Kong" }
+        ],
+        facebook: "https://www.facebook.com/GrandSeikoOfficial/",
+        tiktok: null,
+        twitter: "https://x.com/grandseikousa",
+        youtube: "https://www.youtube.com/channel/UCksAaql1x0PjxcbLli9EsbA",
+        linkedin: "https://www.linkedin.com/company/grand-seiko-europe/posts/?feedView=all",
+        weibo: "https://weibo.com/u/6898720471",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/6461de3d000000001002b0e5"
+    },
+    {
+        name: "David Yurman",
+        client: ["Richemont"],
+        owner: [STAFF.E, STAFF.B],
+        official_web: "https://www.davidyurman.com/fr-fr",
+        instagram: "https://www.instagram.com/davidyurman/",
+        facebook: "https://www.facebook.com/DavidYurman",
+        tiktok: "https://www.tiktok.com/@davidyurman",
+        twitter: "https://x.com/davidyurman",
+        youtube: "https://www.youtube.com/c/davidyurman",
+        linkedin: "https://www.linkedin.com/company/david-yurman/posts/?feedView=all",
+        weibo: {url:"https://weibo.com/u/7073234034", Note:"2024-10"},
+        Xiaohongshu: {url:"https://www.xiaohongshu.com/user/profile/5e59eed200000000010024d3", Note:"2024-10"}
+    },
+    {
+        name: "Kenzo",
+        client: ["LVMH"],
+        owner: [STAFF.E, STAFF.B],
+        official_web: null,
+        instagram: "https://www.instagram.com/kenzo",
+        facebook: "https://www.facebook.com/KENZOParis",
+        tiktok: "https://www.tiktok.com/@kenzo",
+        twitter: null,
+        youtube: "https://www.youtube.com/@kenzo",
+        linkedin: "https://www.linkedin.com/company/kenzo-paris/posts/?feedView=all",
+        weibo: "https://weibo.com/u/3082851643",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5f1faf44000000000101e8a4"
+    },
+    {
+        name: "Shiseido",
+        client: ["Chanel Beauty"],
+        owner: [STAFF.E],
+        official_web: null,
+        instagram: [
+            { url: "https://www.instagram.com/shiseido/", Note: "Global", priority: true },
+            { url: "https://www.instagram.com/shiseido_corp/", Note: "Corporate" },
+            { url: "https://www.instagram.com/shiseido_japan/", region: "Japan" },
+            { url: "https://www.instagram.com/shiseido_men_/", Note: "Men" },
+            { url: "https://www.instagram.com/shiseidohk/", Note: "Hong Kong", region: "Hong Kong" },
+            { url: "https://www.instagram.com/shiseidomiddleeast/", region: "Middle East" }
+        ],
+        facebook: null,
+        tiktok: "https://www.tiktok.com/@shiseido",
+        twitter: "https://x.com/SHISEIDO_brand",
+        youtube: null,
+        linkedin: "https://www.linkedin.com/company/shiseido/posts/?feedView=all",
+        weibo: "https://weibo.com/shiseidocn",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/55a9bd48b7ba2274b5cb39e7"
+    },
+    {
+        name: "Jean-Paul Gaultier",
+        client: ["Chanel Beauty"],
+        owner: [STAFF.E],
+        official_web: null,
+        instagram: "https://www.instagram.com/jeanpaulgaultier/",
+        facebook: "https://www.facebook.com/jean.paul.gaultier/",
+        tiktok: "https://www.tiktok.com/@jeanpaulgaultier",
+        twitter: null,
+        youtube: "https://www.youtube.com/jeanpaulgaultier",
+        linkedin: "https://www.linkedin.com/company/jean-paul-gaultier/posts/?feedView=all",
+        weibo: null,
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/6791c0d0000000000d009197"
+    },
+    {
+        name: "Valentino Beauty",
+        client: ["Chanel Beauty"],
+        owner: [STAFF.E],
+        official_web: null,
+        instagram: "https://www.instagram.com/valentino.beauty/",
+        facebook: "https://www.facebook.com/maisonvalentinobeauty/",
+        tiktok: "https://www.tiktok.com/@valentino.beauty",
+        twitter: null,
+        youtube: "https://www.youtube.com/channel/UCXMio14n0-abQHrLfDl6ORw",
+        linkedin: null,
+        weibo: "https://weibo.com/u/7594390949",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5fa65de60000000001000319?xsec_token=ABiXkqkGW2ca5B-MWk2xiGWNtq4VVrYKgfqmAzgw5nQUk%3D&xsec_source=pc_search"
+    },
+    {
+        name: "Schiaparelli",
+        client: ["Chanel Fashion"],
+        owner: [STAFF.E],
+        official_web: "https://schiaparelli.com/en",
+        instagram: "https://www.instagram.com/schiaparelli/",
+        facebook: "https://www.facebook.com/Schiaparelli",
+        tiktok: "https://www.tiktok.com/@schiaparelli",
+        twitter: "https://x.com/Schiaparelli",
+        youtube: "https://www.youtube.com/@schiaparelli",
+        linkedin: "https://www.linkedin.com/company/elsa-schiaparelli-sas/posts/?feedView=all",
+        weibo: "https://weibo.com/u/7947860420",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/635b7c8f000000001901d058"
+    },
+    {
+        name: "A. Lange & Söhne",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/alangesoehne/",
+        facebook: "https://www.facebook.com/LangeSoehne",
+        tiktok: null,
+        twitter: null,
+        youtube: "https://www.youtube.com/@alangesoehne",
+        linkedin: "https://www.linkedin.com/company/alangesoehne/posts/?feedView=all",
+        weibo: "https://weibo.com/alangesoehne",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5c715707000000001200ec14"
+    },
+    {
+        name: "Audemars Piguet",
+        client: ["Richemont","Chanel Fashion"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/audemarspiguet/",
+        facebook: "https://www.facebook.com/audemarspiguet",
+        tiktok: "https://www.tiktok.com/@audemarspiguet",
+        twitter: "https://twitter.com/AudemarsPiguet",
+        youtube: "https://www.youtube.com/@audemarspiguet",
+        linkedin: "https://www.linkedin.com/company/audemarspiguet/posts/?feedView=all",
+        weibo: "https://weibo.com/audemarspiguetchina",
+        Xiaohongshu: null
+    },
+    {
+        name: "Baume & Mercier",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/baumeetmercier/",
+        facebook: "https://www.facebook.com/BaumeEtMercier",
+        tiktok: null,
+        twitter: null,
+        youtube: "https://www.youtube.com/@baumeetmercier1830",
+        linkedin: "https://www.linkedin.com/company/baume-&-mercier/posts/?feedView=all",
+        weibo: "https://weibo.com/baumemercier",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/560358933397db51008248fe"
+    },
+    {
+        name: "Boucheron",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/boucheron/",
+        facebook: "https://www.facebook.com/boucheronfr/",
+        tiktok: "https://www.tiktok.com/@boucheronofficial",
+        twitter: "https://twitter.com/Boucheron",
+        youtube: "https://www.youtube.com/@boucheron",
+        linkedin: "https://www.linkedin.com/company/boucheron/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2823454334",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5edef04f000000000101f440"
+    },
+    {
+        name: "Breguet",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/montresbreguet/",
+        facebook: "https://www.facebook.com/MontresBreguet",
+        tiktok: null,
+        twitter: "https://twitter.com/MontresBreguet",
+        youtube: "https://www.youtube.com/@MontresBreguet",
+        linkedin: "https://www.linkedin.com/company/montres-breguet-sa/posts/?feedView=all",
+        weibo: "https://weibo.com/breguet",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/6094f0ad0000000001000faa"
+    },
+    {
+        name: "Breitling",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/breitling/",
+        facebook: "https://www.facebook.com/Breitling",
+        tiktok: "https://www.tiktok.com/@breitling",
+        twitter: "https://twitter.com/Breitling",
+        youtube: "https://www.youtube.com/@Breitling",
+        linkedin: "https://www.linkedin.com/company/breitling/posts/?feedView=all",
+        weibo: "https://weibo.com/u/1822267487",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5bd87ad2b1c8180001294133"
+    },
+    {
+        name: "Buccellati",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/buccellatimilan/",
+        facebook: "https://www.facebook.com/BuccellatiMilan",
+        tiktok: "https://www.tiktok.com/@buccellatimilan",
+        twitter: null,
+        youtube: "https://www.youtube.com/@BuccellatiMilan",
+        linkedin: "https://www.linkedin.com/company/buccellati/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2279650092",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5e6874c4000000000100385c"
+    },
+    {
+        name: "Chopard",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/chopard/",
+        facebook: "https://www.facebook.com/ChopardFR",
+        tiktok: null,
+        twitter: "https://twitter.com/Chopard",
+        youtube: "https://www.youtube.com/@chopard",
+        linkedin: "https://www.linkedin.com/company/chopard/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2810967624",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5c03d30b000000000800c5ef"
+    },
+    {
+        name: "IWC",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/iwcwatches/",
+        facebook: "https://www.facebook.com/IWCWatches",
+        tiktok: "https://www.tiktok.com/@iwcwatches",
+        twitter: "https://twitter.com/IWC",
+        youtube: "https://www.youtube.com/@iwcwatches",
+        linkedin: "https://www.linkedin.com/company/iwc-schaffhausen/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2004738083",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/56b6bfd9a9b2ed50f97baf03"
+    },
+    {
+        name: "Longines",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/longines/",
+        facebook: "https://www.facebook.com/LonginesFR/",
+        tiktok: "https://www.tiktok.com/@longines",
+        twitter: "https://twitter.com/Longines",
+        youtube: "https://www.youtube.com/@longineswatches",
+        linkedin: "https://www.linkedin.com/company/longines-watch-co--francillon-ltd-/posts/?feedView=all",
+        weibo: "https://weibo.com/u/1840130785",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5dfadc00000000000100bfe6"
+    },
+    {
+        name: "Montblanc",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/montblanc/",
+        facebook: "https://www.facebook.com/montblanc",
+        tiktok: "https://www.tiktok.com/@montblanc",
+        twitter: "https://twitter.com/montblanc_world",
+        youtube: "https://www.youtube.com/@montblanc",
+        linkedin: "https://www.linkedin.com/company/montblanc/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2313499034",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/60d400e80000000020024325"
+    },
+    {
+        name: "Panerai",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/panerai/",
+        facebook: "https://www.facebook.com/PaneraiOfficial",
+        tiktok: "https://www.tiktok.com/@panerai",
+        twitter: null,
+        youtube: "https://www.youtube.com/@PaneraiOfficial",
+        linkedin: "https://www.linkedin.com/company/officine-panerai/posts/?feedView=all",
+        weibo: "https://weibo.com/u/5062503294",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/566981f99eb5784c78284cb9"
+    },
+    {
+        name: "Patek Philippe",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/patekphilippe/",
+        facebook: "https://www.facebook.com/patekphilippe",
+        tiktok: null,
+        twitter: null,
+        youtube: "https://www.youtube.com/@PatekPhilippeGeneva",
+        linkedin: null,
+        weibo: null,
+        Xiaohongshu: null
+    },
+    {
+        name: "Piaget",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/piaget/",
+        facebook: "https://www.facebook.com/piaget",
+        tiktok: "https://www.tiktok.com/@piaget",
+        twitter: null,
+        youtube: "https://www.youtube.com/@Piaget",
+        linkedin: "https://www.linkedin.com/company/piaget/posts/?feedView=all",
+        weibo: "https://weibo.com/u/2043491874",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/599daa8f5e87e710775a6c24"
+    },
+    {
+        name: "Richard Mille",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/richardmille/",
+        facebook: "https://www.facebook.com/richardmille.watches",
+        tiktok: null,
+        twitter: "https://twitter.com/Richard_Mille",
+        youtube: "https://www.youtube.com/@RichardMilleOfficial",
+        linkedin: "https://www.linkedin.com/company/richardmille/posts/?feedView=all",
+        weibo: "https://weibo.com/RichardMilleOfficial",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/6565d2db000000003c01c94a"
+    },
+    {
+        name: "Roger Dubuis",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/roger_dubuis/",
+        facebook: "https://www.facebook.com/RogerDubuisWatches",
+        tiktok: "https://www.tiktok.com/@roger_dubuis",
+        twitter: "https://twitter.com/Roger_Dubuis",
+        youtube: "https://www.youtube.com/@rogerdubuis",
+        linkedin: "https://www.linkedin.com/company/manufacture-roger-dubuis/posts/?feedView=all",
+        weibo: "https://weibo.com/rogerdubuis",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5e4fa231000000000100350e"
+    },
+    {
+        name: "Ulysse Nardin",
+        client: ["Richemont"],
+        owner: [STAFF.G],
+        official_web: null,
+        instagram: "https://www.instagram.com/ulyssenardinofficial/",
+        facebook: "https://www.facebook.com/UlysseNardinwatches",
+        tiktok: null,
+        twitter: "https://twitter.com/ulysse_nardin",
+        youtube: "https://www.youtube.com/@UlysseNardinOfficial",
+        linkedin: "https://www.linkedin.com/company/ulyssenardin/posts/?feedView=all",
+        weibo: "https://weibo.com/ulyssenardinwatch",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5ffb41320000000001009d44"
+    },
+    {
+        name: "ALAÏA",
+        client: ["Chanel Fashion"],
+        owner: [STAFF.D],
+        official_web: null,
+        instagram: "https://www.instagram.com/maisonalaia/",
+        facebook: null,
+        tiktok: null,
+        twitter: null,
+        youtube: "https://www.youtube.com/@MaisonAlaïa",
+        linkedin: "https://www.linkedin.com/company/maison-alaia/posts/?feedView=all",
+        weibo: "https://weibo.com/u/5835613520",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5a1a86e811be100ed7ac5fd4"
+    },
+    {
+        name: "CALVIN KLEIN",
+        client: ["Lacoste"],
+        owner: [STAFF.E, STAFF.A],
+        official_web: null,
+        instagram: "https://www.instagram.com/calvinklein/",
+        facebook: "https://www.facebook.com/CalvinKlein",
+        tiktok: "https://www.tiktok.com/@calvinklein",
+        twitter: "https://twitter.com/CalvinKlein",
+        youtube: "https://www.youtube.com/@calvinklein",
+        linkedin: "https://www.linkedin.com/company/calvin-klein/posts/?feedView=all",
+        weibo: "https://weibo.com/calvinklein",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5c2a108f0000000007017791"
+    },
+    {
+        name: "Celine",
+        client: ["LVMH", "Prada", "Richemont"],
+        owner: [STAFF.D, STAFF.B],
+        official_web: null,
+        instagram: "https://www.instagram.com/celine",
+        facebook: "https://www.facebook.com/celineofficial",
+        tiktok: "https://www.tiktok.com/@Celine",
+        twitter: "https://twitter.com/celineofficial",
+        youtube: "https://www.youtube.com/Celine",
+        linkedin: "https://www.linkedin.com/company/celine/posts/?feedView=all",
+        weibo: "https://weibo.com/u/7341645657",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/600eafd9000000000100288d"
+    },
+    {
+        name: "Emilio Pucci",
+        client: ["LVMH"],
+        owner: [STAFF.D, STAFF.B],
+        official_web: null,
+        instagram: "https://www.instagram.com/emiliopucci/",
+        facebook: "https://www.facebook.com/emiliopucci",
+        tiktok: "https://www.tiktok.com/@pucci",
+        twitter: null,
+        youtube: "https://www.youtube.com/@PUCCI",
+        linkedin: "https://www.linkedin.com/company/emilio-pucci/posts/?feedView=all",
+        weibo: null,
+        Xiaohongshu: null
+    },
+    {
+        name: "Givenchy",
+        client: ["LVMH", "Prada", "Richemont"],
+        owner: [STAFF.D, STAFF.B],
+        official_web: null,
+        instagram: "https://www.instagram.com/givenchy/",
+        facebook: "https://www.facebook.com/Givenchy/",
+        tiktok: "https://www.tiktok.com/@givenchy/",
+        twitter: "https://twitter.com/givenchy/",
+        youtube: "https://www.youtube.com/givenchy",
+        linkedin: "https://www.linkedin.com/company/givenchy/posts/?feedView=all",
+        weibo: "https://weibo.com/u/1912136333",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5e5de358000000000100997f"
+    },
+    {
+        name: "H. Moser & Cie",
+        client: ["LVMH", "Prada", "Richemont"],
+        owner: [STAFF.D],
+        official_web: null,
+        instagram: "https://www.instagram.com/moserwatches/",
+        facebook: "https://www.facebook.com/MoserWatches",
+        tiktok: null,
+        twitter: null,
+        youtube: "https://www.youtube.com/@HMoserAndCieWatches",
+        linkedin: "https://www.linkedin.com/company/h-moser-&-cie-/posts/?feedView=all",
+        weibo: "https://weibo.com/u/3927879866",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5e819a8a000000000100349f"
+    },
+    {
+        name: "LACOSTE",
+        client: ["Lacoste"],
+        owner: [STAFF.D],
+        official_web: null,
+        instagram: "https://www.instagram.com/lacoste/",
+        facebook: "https://www.facebook.com/LacosteFrance",
+        tiktok: "https://www.tiktok.com/@lacoste",
+        twitter: "https://twitter.com/Lacoste",
+        youtube: "https://www.youtube.com/@Lacoste",
+        linkedin: "https://www.linkedin.com/company/lacoste/posts/?feedView=all",
+        weibo: "https://weibo.com/lacosteclub",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5b1540b84eacab76262f9d8f"
+    },
+    {
+        name: "Maison Margiela Beauty",
+        client: ["Puig"],
+        owner: [STAFF.D],
+        official_web: null,
+        instagram: "https://www.instagram.com/maisonmargielafragrances/",
+        facebook: "https://www.facebook.com/maisonmargielafragrances",
+        tiktok: { url: "https://www.tiktok.com/@maisonmargielafragrances", Note: "No content"},
+        twitter: null,
+        youtube: null,
+        linkedin: null,
+        weibo: "https://weibo.com/u/7051369932",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5cc90ec3000000001102be64"
+    },
+    {
+        name: "Messika",
+        client: ["Richemont"],
+        owner: [STAFF.D, STAFF.B],
+        official_web: null,
+        instagram: "https://www.instagram.com/messika/",
+        facebook: "https://www.facebook.com/MessikaJewelry/",
+        tiktok: "https://www.tiktok.com/@messika",
+        twitter: "https://x.com/MessikaJewelry",
+        youtube: "https://www.youtube.com/user/MessikaJewelry/videos",
+        linkedin: "https://www.linkedin.com/company/messika/posts/?feedView=all",
+        weibo: "https://weibo.com/u/7493753015",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5de28e340000000001000b95"
+    },
+    {
+        name: "Moncler",
+        client: ["Prada", "Chanel Fashion"],
+        owner: [STAFF.D, STAFF.B],
+        official_web: null,
+        instagram: "https://www.instagram.com/moncler/",
+        facebook: "https://www.facebook.com/moncler",
+        tiktok: "https://www.tiktok.com/@moncler",
+        twitter: "https://twitter.com/Moncler",
+        youtube: "https://www.youtube.com/@moncler",
+        linkedin: "https://www.linkedin.com/company/moncler/posts/?feedView=all",
+        weibo: "https://weibo.com/u/3292444503",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5e12db8a0000000001002fdb"
+    },
+    {
+        name: "NEW BALANCE",
+        client: ["Lacoste"],
+        owner: [STAFF.D],
+        official_web: null,
+        instagram: [
+            { url: "https://www.instagram.com/newbalance/", Note: "Main" },
+            { url: "https://www.instagram.com/newbalancebaseball/", Note: "Baseball" },
+            { url: "https://www.instagram.com/newbalancetennis/", Note: "Tennis" },
+            { url: "https://www.instagram.com/newbalancefootball/", Note: "Football" },
+            { url: "https://www.instagram.com/newbalancebasketball/", Note: "Basketball" }
+        ],
+        facebook: null,
+        tiktok: "https://www.tiktok.com/@newbalance",
+        twitter: "https://twitter.com/newbalance",
+        youtube: "https://www.youtube.com/user/newbalance",
+        linkedin: "https://www.linkedin.com/company/new-balance/posts/?feedView=all",
+        weibo: "https://weibo.com/u/1773525641",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5bd4299ec9151c00013d347f"
+    },
+    {
+        name: "Parfums de Marly",
+        client: ["Puig"],
+        owner: [STAFF.D],
+        official_web: null,
+        instagram: "https://www.instagram.com/parfumsdemarly/",
+        facebook: "https://www.facebook.com/parfumsdemarly",
+        tiktok: "https://www.tiktok.com/@parfumsdemarly_paris",
+        twitter: null,
+        youtube: null,
+        linkedin: "https://www.linkedin.com/company/parfums-de-marly/posts/?feedView=all",
+        weibo: "https://weibo.com/u/7607604726",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/600e4a6f0000000001006d98"
+    },
+    {
+        name: "Vhernier",
+        client: ["Richemont"],
+        owner: [STAFF.D],
+        official_web: null,
+        instagram: "https://www.instagram.com/vhernier/",
+        facebook: "https://www.facebook.com/Vhernier",
+        tiktok: null,
+        twitter: null,
+        youtube: "https://www.youtube.com/@vhernierofficial7666",
+        linkedin: "https://www.linkedin.com/company/vhernier/posts/?feedView=all",
+        weibo: null,
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/68859922000000000d03d3a3"
+    },
+    {
+        name: "Helena Rubinstein",
+        client: ["Chanel Beauty"],
+        owner: [STAFF.D],
+        official_web: null,
+        instagram: "https://www.instagram.com/helenarubinstein/",
+        facebook: null,
+        tiktok: null,
+        twitter: null,
+        youtube: null,
+        linkedin: null,
+        weibo: "https://weibo.com/u/1862278082",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/560641b4a75c952bf63d58c1"
     },
 ];
 
