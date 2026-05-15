@@ -314,6 +314,7 @@ const BRANDS_DATA = [
         name: "Van Cleef & Arpels",
         client: ["LVMH", "Swarovski", "Richemont"],        // 所属客户
         owner: [STAFF.D],      // 负责人
+        official_web: "https://www.vancleefarpels.com/us/en/the-maison/newsroom.html",
         instagram: "https://www.instagram.com/vancleefarpels/",
         facebook: "https://www.facebook.com/profile.php?id=100064912201715&brand_redir=68441743439#",
         tiktok: "https://www.tiktok.com/@vancleefarpels",
@@ -379,7 +380,10 @@ const BRANDS_DATA = [
         name: "Chaumet",
         client: ["LVMH", "Richemont"],        // 所属客户
         owner: [STAFF.D],      // 负责人
-        instagram: "https://www.instagram.com/chaumetofficial/",
+        instagram: [
+            {url:"https://www.instagram.com/chaumetofficial/", Note:"Global"},
+            {url:"https://www.instagram.com/chaumet_arabia", Note:"UAE"},
+            ],
         facebook: "https://www.facebook.com/chaumet.fr",
         tiktok: "https://www.tiktok.com/@chaumet?lang=en",
         twitter: "https://x.com/Chaumet",
@@ -417,7 +421,8 @@ const BRANDS_DATA = [
     {
         name: "Ulta Beauty",
         client: ["LVMH"], 
-        owner: [STAFF.C],     
+        owner: [STAFF.C],
+        official_web: "https://www.ulta.com/beautyservices/store-events",     
         instagram: [
             {url: "https://www.instagram.com/ultabeauty/", region: "Global", priority: true},
             {url: "https://www.instagram.com/ultabeautymx", region: "Mexico", priority: true},
@@ -434,7 +439,8 @@ const BRANDS_DATA = [
     {
         name: "Sephora",
         client: ["LVMH"], 
-        owner: [STAFF.C],     
+        owner: [STAFF.C],
+        official_web: "https://www.sephora.fr/",     
         instagram: [
             { url: "https://www.instagram.com/sephora/", region: "Global", priority: true },
             { url: "https://www.instagram.com/sephorafrance/", region: "France", priority: true },
@@ -458,10 +464,15 @@ const BRANDS_DATA = [
             { url: "https://www.instagram.com/sephora_vietnam/", region: "Vietnam", priority: false, Note:"2022" },
             { url: "https://www.instagram.com/sephoraportugal/", region: "Portugal", priority: true },
             { url: "https://www.instagram.com/sephorabrasil/", region: "Brazil", priority: true },
+            { url: "https://www.instagram.com/sephorahk/", region: "Hong Kong", priority: true },
+
         ],
         facebook: "https://www.facebook.com/sephorafrance",
-        tiktok: "https://www.tiktok.com/@sephora",
-        twitter: "https://twitter.com/Sephora",
+        tiktok: [
+            { url:"https://www.tiktok.com/@sephora", region: "Global", priority: true },
+            { url:"https://www.tiktok.com/@sephorafrance?lang=en", region: "France", priority: true }
+            ],
+        twitter: { url: "https://twitter.com/Sephora", Note:"2022-11"},
         youtube: "https://www.youtube.com/@Sephora",
         linkedin: "https://www.linkedin.com/company/sephora/",
         weibo: "https://weibo.com/u/1829867530",
@@ -470,11 +481,19 @@ const BRANDS_DATA = [
     {
         name: "Nordstrom",
         client: ["LVMH"], 
-        owner: [STAFF.C],     
-        instagram: "https://www.instagram.com/nordstrom/",
+        owner: [STAFF.C],
+        official_web: "https://www.tudorwatch.com/fr",     
+        instagram: [
+            { url:"https://www.instagram.com/nordstrom/",region : "Global", Note: "Official"},
+            { url:"https://www.instagram.com/nordstromalamoana/",region:"USA", Note: "Ala Moana"},
+            { url:"https://www.instagram.com/nordstromscp/",region:"USA", Note: "South Coast Plaza"},
+            { url:"https://www.instagram.com/nordstromnyc/",region:"USA", Note: "New York"},
+            { url:"https://www.instagram.com/nordstrombeauty/",region:"USA", Note: "Beauty"},
+
+            ],
         facebook: "https://www.facebook.com/Nordstrom",
         tiktok: "https://www.tiktok.com/@nordstrom",
-        twitter: "https://twitter.com/Nordstrom",
+        twitter: { url:"https://twitter.com/Nordstrom", Note:"2022-11"},
         youtube: "https://www.youtube.com/@nordstrom",
         linkedin: "https://www.linkedin.com/company/nordstrom/",
         weibo: null,
@@ -487,7 +506,7 @@ const BRANDS_DATA = [
         instagram: "https://www.instagram.com/nocibe_france/",
         facebook: "https://www.facebook.com/nocibe",
         tiktok: "https://www.tiktok.com/@nocibe_france",
-        twitter: "https://twitter.com/Nocibe",
+        twitter: {url:"https://twitter.com/Nocibe", Note:"2021-07"},
         youtube: "https://www.youtube.com/@NocibeOfficiel",
         linkedin: "https://www.linkedin.com/company/nocibe/",
         weibo: null,
@@ -510,7 +529,12 @@ const BRANDS_DATA = [
         name: "Neiman Marcus",
         client: ["LVMH"],
         owner: [STAFF.C],
-        instagram: "https://www.instagram.com/neimanmarcus/",
+        official_web: "https://www.neimanmarcus.com/editorial",
+        instagram: [
+             { url: "https://www.instagram.com/neimanmarcus/",region: "Global", Note: "Main", priority: true},
+             { url: "https://www.instagram.com/neimanmarcusbeverlyhills/", region: "USA", Note: "Beverly Hills", priority: true},
+             { url: "https://www.instagram.com/neimanmarcusnorthpark/", region: "USA", Note: "NorthPark", priority: true},
+            ],
         facebook: "https://www.facebook.com/neimanmarcus",
         tiktok: "https://www.tiktok.com/@neimanmarcus",
         twitter: "https://twitter.com/neimanmarcus",
@@ -530,7 +554,7 @@ const BRANDS_DATA = [
         ],
         facebook: "https://www.facebook.com/mytheresa",
         tiktok: "https://www.tiktok.com/@mytheresa.com",
-        twitter: "https://twitter.com/mytheresa_com",
+        twitter: {url:"https://twitter.com/mytheresa_com", Note:"2023-10"},
         youtube: "https://www.youtube.com/@mytheresa_com",
         linkedin: "https://www.linkedin.com/company/mytheresa-com/posts/?feedView=all",
         weibo: "https://weibo.com/u/5721570203",
@@ -542,17 +566,18 @@ const BRANDS_DATA = [
         owner: [STAFF.C],
         instagram: "https://www.instagram.com/marionnaudfr/",
         facebook: "https://www.facebook.com/Marionnaud.France",
-        tiktok: "https://www.tiktok.com/@marionnaud_maroc",
-        twitter: "https://twitter.com/Marionnaud_Fr",
+        tiktok: "https://www.tiktok.com/@marionnaudfrance",
+        twitter: null,
         youtube: "https://www.youtube.com/@MarionnaudFranceTV",
         linkedin: "https://www.linkedin.com/company/marionnaud/",
-        weibo: "https://weibo.com/u/7316798466",
-        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5d79aa6d0000000001009268"
+        weibo: { url:"https://weibo.com/u/7316798466", Note: "2023-03"},
+        Xiaohongshu: { url:"https://www.xiaohongshu.com/user/profile/5d79aa6d0000000001009268", Note: "2023-05"}
     },
     {
         name: "Le Bon Marché",
         client: ["LVMH"],
         owner: [STAFF.C],
+        official_web: "https://www.lebonmarche.com/fr/magasin/oh_bon_marche/actualites-pop-up-du-moment?srsltid=AfmBOoqZ5Hqm9QDsWqNrx9_XTTFrSqkYC5S2n4Vx9F2VHtSknGd-4Hxo",
         instagram: "https://www.instagram.com/lebonmarcherivegauche/",
         facebook: "https://www.facebook.com/lebonmarche",
         tiktok: "https://www.tiktok.com/@lebonmarcherivegauche",
@@ -566,6 +591,7 @@ const BRANDS_DATA = [
         name: "La Samaritaine",
         client: ["LVMH"],
         owner: [STAFF.C],
+        official_web: "https://www.dfs.com/fr/samaritaine/what-is-happening/news/",
         instagram: "https://www.instagram.com/samaritaineparis/",
         facebook: "https://www.facebook.com/samaritaineparis",
         tiktok: "https://www.tiktok.com/@samaritaineparis",
@@ -579,13 +605,14 @@ const BRANDS_DATA = [
         name: "Galeries Lafayette",
         client: ["LVMH"],
         owner: [STAFF.C],
+        official_web: "https://haussmann.galerieslafayette.com/la-chasse-au-tresor-de-paques/",
         instagram: [
             { url: "https://www.instagram.com/galerieslafayette/", region: "Global", priority: true, Note:"Main" },
             { url: "https://www.instagram.com/galerieslafayettechampselysees/", region: "France", priority: true, Note:"Champs-Elysées" },
             { url: "https://www.instagram.com/galerieslafayette_rennes/", region: "France", priority: true, Note:"Rennes" },
             { url: "https://www.instagram.com/galerieslafayette_avignon/", region: "France", priority: false, Note:"Avignon" },
             { url: "https://www.instagram.com/galerieslafayettedoha/", region: "Qatar", priority: true, Note:"Doha" },
-            { url: "https://www.instagram.com/galerieslafayettedubai/", region: "United Arab Emirates", priority: true, Note:"Dubai" },
+            { url: "https://www.instagram.com/galerieslafayettedubai/", region: "UAE", priority: true, Note:"Dubai" },
             { url: "https://www.instagram.com/galerieslafayettemacau/", region: "China", priority: false, Note:"Macau" },
         ],
         facebook: "https://www.facebook.com/galerieslafayette",
@@ -601,10 +628,10 @@ const BRANDS_DATA = [
         client: ["LVMH"],
         owner: [STAFF.C],
         instagram: "https://www.instagram.com/farfetch/",
-        facebook: "https://www.facebook.com/Farfetch",
+        facebook: { url: "https://www.facebook.com/Farfetch", Note: "2024-12"},
         tiktok: "https://www.tiktok.com/@farfetch",
-        twitter: "https://twitter.com/farfetch",
-        youtube: "https://www.youtube.com/@farfetch",
+        twitter: { url: "https://twitter.com/farfetch", Note: "2024-05"},
+        youtube: { url: "https://www.youtube.com/@farfetch", Note: "2022-06"},
         linkedin: "https://www.linkedin.com/company/farfetch.com/posts/?feedView=all",
         weibo: "https://weibo.com/u/3790692600",
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5bd12f2035c11a00018239c9"
@@ -630,15 +657,16 @@ const BRANDS_DATA = [
         facebook: "https://www.facebook.com/JACQUEMUS",
         tiktok: "https://www.tiktok.com/@jacquemus",
         twitter: "https://twitter.com/jacquemus",
-        youtube: "https://www.youtube.com/@jacquemus8588",
+        youtube: "https://www.youtube.com/@jacquemus",
         linkedin: "https://www.linkedin.com/company/jacquemus/posts/?feedView=all",
         weibo: null,
-        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/63f59c06000000000f011034"
+        Xiaohongshu: {url:"https://www.xiaohongshu.com/user/profile/63f59c06000000000f011034?exSource=https://luxurynsightsearchhub.netlify.app/", Note: "2024-11"}
     },
     {
         name: "Miu Miu",
         client: ["Prada","Richemont"],
         owner: [STAFF.C],
+        official_web: "https://www.miumiu.com/fr/fr/miumiu-club.html",
         instagram: "https://www.instagram.com/miumiu/",
         facebook: "https://www.facebook.com/MiuMiu/",
         tiktok: "https://www.tiktok.com/@miumiu?lang=en",
@@ -646,7 +674,10 @@ const BRANDS_DATA = [
         youtube: "https://www.youtube.com/@miumiu",
         linkedin: "https://www.linkedin.com/showcase/miumiu/posts/",
         weibo: "https://weibo.com/u/5813004880",
-        Xiaohongshu: "https://xhslink.com/m/6957k0S4BKS"
+        Xiaohongshu: [
+            {url:"https://xhslink.com/m/6957k0S4BKS", Note:"Fashion", priority:true},
+            {url:"https://www.xiaohongshu.com/user/profile/681c8ec8000000000d00ab66?xsec_token=ABvAq0JIh9sWvtB0cgXkLhVpOdMRZHWodSg93gWq6mt68=&xsec_source=pc_search", Note:"Beauty", priority:true}
+            ]
     },
     {
         name: "Versace",
@@ -1005,25 +1036,25 @@ const BRANDS_DATA = [
             { url: "https://www.instagram.com/esteelauderkr/", region: "Korea", priority: true }
         ],
         facebook: [
-            { url: "https://www.facebook.com/EsteeLauder/", region: "Global" },
-            { url: "https://www.facebook.com/esteelaudergermany", region: "Germany" },
-            { url: "https://www.facebook.com/esteelaudermy", region: "Malaysia" },
-            { url: "https://www.facebook.com/EsteeLauderPH", region: "Philippines" },
-            { url: "https://www.facebook.com/EsteeLauderKR", region: "Korea" },
-            { url: "https://www.facebook.com/EsteeLauderIndia", region: "India" },
-            { url: "https://www.facebook.com/EsteeLauderCL", region: "Chile" },
-            { url: "https://www.facebook.com/esteelaudertw", region: "Taiwan" },
+            { url: "https://www.facebook.com/EsteeLauder/", region: "Global", priority: true},
+            { url: "https://www.facebook.com/esteelaudergermany", region: "Germany", priority: true },
+            { url: "https://www.facebook.com/esteelaudermy", region: "Malaysia", priority: true },
+            { url: "https://www.facebook.com/EsteeLauderPH", region: "Philippines", priority: true },
+            { url: "https://www.facebook.com/EsteeLauderKR", region: "Korea", priority: true },
+            { url: "https://www.facebook.com/EsteeLauderIndia", region: "India", priority: true },
+            { url: "https://www.facebook.com/EsteeLauderCL", region: "Chile", priority: true },
+            { url: "https://www.facebook.com/esteelaudertw", region: "Taiwan", priority: true },
             { url: "https://www.facebook.com/esteelauderIT", region: "Italy", Note: "2024-05" },
             { url: "https://www.facebook.com/EsteeLauderSASouth Africa", region: "South Africa", Note: "2023" },
-            { url: "https://www.facebook.com/EsteeLauderIndonesia", region: "Indonesia" },
+            { url: "https://www.facebook.com/EsteeLauderIndonesia", region: "Indonesia", priority: true },
             { url: "https://www.facebook.com/EsteeLauderSwitzerland", region: "Switzerland", Note: "2023" },
-            { url: "https://www.facebook.com/esteelaudervn", region: "Vietnam" },
+            { url: "https://www.facebook.com/esteelaudervn", region: "Vietnam", priority: true },
             { url: "https://www.facebook.com/EsteeLauderES", region: "Spain", Note: "2023" },
             { url: "https://www.facebook.com/estee.lauder.portugal", region: "Portugal", Note: "2023" },
-            { url: "https://www.facebook.com/EsteeLauderMX", region: "Mexico" },
+            { url: "https://www.facebook.com/EsteeLauderMX", region: "Mexico", priority: true },
             { url: "https://www.facebook.com/EsteeLauderAR", region: "Argentina" },
-            { url: "https://www.facebook.com/EsteeLauderPROficial", region: "Puerto Rico" },
-            { url: "https://www.facebook.com/EsteeLauderCo", region: "Colombia" },
+            { url: "https://www.facebook.com/EsteeLauderPROficial", region: "Puerto Rico", priority: true },
+            { url: "https://www.facebook.com/EsteeLauderCo", region: "Colombia", priority: true },
             { url: "https://www.facebook.com/esteelauderguatemala", region: "Guatemala", Note: "2021" }
         ],
         tiktok: "https://www.tiktok.com/@esteelauder",
@@ -1352,11 +1383,11 @@ const BRANDS_DATA = [
         name: "Skims",
         client: ["Chanel Fashion"],
         owner: [STAFF.F],
-        official_web: { url: "https://skims.com/en-fr", Note: "France" },
+        official_web: "https://skims.com/en-fr",
         instagram: "https://www.instagram.com/skims/",
         facebook: "https://www.facebook.com/SKIMSbody/",
         tiktok: "https://www.tiktok.com/@skims",
-        twitter: null, // 原文中 Twitter 提供的是 TikTok 链接，故设为 null
+        twitter: "https://www.tiktok.com/@skims?lang=fr",
         youtube: "https://www.youtube.com/c/skims",
         linkedin: null,
         weibo: null,
@@ -2129,7 +2160,13 @@ const BRANDS_DATA = [
         client: ["Richemont"],
         owner: [STAFF.G],
         official_web: null,
-        instagram: "https://www.instagram.com/iwcwatches/",
+        instagram: [
+            { url: "https://www.instagram.com/iwcwatches/", region: "Global", priority:true },
+            { url: "https://www.instagram.com/iwcwatches_uk/", region: "UK", priority:true },
+            { url: "https://www.instagram.com/iwcwatchesarabia/", region: "UAE", priority:true },
+            { url: "https://www.instagram.com/iwcwatches_us/", region: "USA", priority:false },
+            { url: "https://www.instagram.com/iwc.brussels/", region: "Belgium", priority:false }
+        ],
         facebook: "https://www.facebook.com/IWCWatches",
         tiktok: "https://www.tiktok.com/@iwcwatches",
         twitter: "https://twitter.com/IWC",
@@ -2451,6 +2488,20 @@ const BRANDS_DATA = [
         linkedin: null,
         weibo: "https://weibo.com/u/1862278082",
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/560641b4a75c952bf63d58c1"
+    },
+    {
+        name: "Tudor",
+        client: ["LVMH","Richemont"],
+        owner: [STAFF.F],
+        official_web: "https://www.tudorwatch.com/fr",
+        instagram: "https://www.instagram.com/tudorwatch/",
+        facebook: "https://www.facebook.com/tudorwatch/",
+        tiktok: "https://www.tiktok.com/@tudorwatch",
+        twitter: null,
+        youtube: "https://www.youtube.com/user/TudorWatch",
+        linkedin: "https://www.linkedin.com/company/tudor-watch/posts/?feedView=all",
+        weibo: "https://weibo.com/tudor",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/565aa4dc0cdc2b6461f8ba92"
     },
 ];
 
