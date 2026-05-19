@@ -127,7 +127,10 @@
 
         /* 分层弹出菜单 */
         .region-menu {
-            display: none; /* 平时隐藏 */
+            display: flex; /* 平时隐藏 */
+            opacity: 0;
+            visibility: hidden;
+
             position: absolute;
             top: 100%; 
             left: 50%;
@@ -137,7 +140,11 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.25);
             padding: 12px;
             z-index: 100;
-            margin-top: 10px;
+
+            margin-top: 0px;
+            padding-top: 18px;
+
+            transition: opacity 0.3s ease 0.3s, visibility 0s linear 0.3s;
             
             /* 关键修改：改为垂直布局，容纳多行内容 */
             flex-direction: column; 
@@ -146,15 +153,18 @@
         }
 
         /* 鼠标悬停显示 */
-        .icon-cell:hover .region-menu {
-            display: flex;
+        .icon-cell:hover .region-menu,
+        .region-menu:hover {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s; 
         }
 
         /* 菜单顶部的装饰小箭头 */
         .region-menu::before {
             content: "";
             position: absolute;
-            top: -8px;
+            top: 10px;
             left: 50%;
             transform: translateX(-50%);
             border-left: 8px solid transparent;
@@ -329,10 +339,17 @@
                     <div class="icon-cell">
                         <img src="${iconUrl}" class="social-icon-img">
                         <div class="region-menu">
+                            
+                            <div class="menu-row" style="justify-content: center; padding-bottom: 4px;">
+                                <a class="open-all-btn" onclick="openAllLinks('${encodedLinks}')">🚀 OPEN ALL</a>
+                            </div>
+                            <div class="menu-divider"></div>
+
                             <div class="menu-row">
                                 <span class="row-label">Primary</span>
                                 <div style="display: flex; gap: 12px;">${renderRowItems(priorityList)}</div>
                             </div>
+                            
                             ${secondaryList.length > 0 ? `
                                 <div class="menu-divider"></div>
                                 <div class="menu-row">
@@ -340,12 +357,9 @@
                                     <div style="display: flex; gap: 12px;">${renderRowItems(secondaryList)}</div>
                                 </div>
                             ` : ''}
-                            <div class="menu-divider"></div>
-                            <div class="menu-row" style="justify-content: center;">
-                                <a class="open-all-btn" onclick="openAllLinks('${encodedLinks}')">🚀 OPEN ALL</a>
-                            </div>
+
                         </div>
-                    </div>
+                    </div>                
                 `;
             }
                 // 3. 单账号处理 (支持对象带日期 或 纯字符串) ---

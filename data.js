@@ -88,12 +88,13 @@ const BRANDS_DATA = [
         name: "Jaeger-LeCoultre",
         client: ["LVMH", "Richemont"],        // 所属客户
         owner: [STAFF.D],      // 负责人
+        official_web: "https://www.jaeger-lecoultre.com/eu-en/boutiques/oceania/australia/sydney/jaeger-lecoultre-chatswood-boutique-609466",
         instagram: "https://www.instagram.com/jaegerlecoultre/",
-        facebook: "https://www.facebook.com/vacheronconstantin/",
+        facebook: "https://www.facebook.com/Jaegerlecoultre/",
         tiktok: { url: "https://www.tiktok.com/@jaegerlecoultre", Note: "no content" },
         twitter: "https://x.com/jaegerlecoultre",
         youtube: "https://www.youtube.com/@jaegerlecoultre/videos",
-        linkedin: "https://www.linkedin.com/company/vacheron-constantin/posts/?feedView=all",
+        linkedin: "https://www.linkedin.com/company/jaeger-lecoultre/posts/?feedView=all",
         weibo: "https://weibo.com/jaegerlecoultrechina?JLCclick=Footer",
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/6080015200000000010055ee"
     },
@@ -147,6 +148,7 @@ const BRANDS_DATA = [
         name: "Prada",
         client: ["LVMH", "Prada", "Chanel Fashion", "Richemont"],        // 所属客户
         owner: [STAFF.D, STAFF.A],      // 负责人
+        official_web: "https://www.pradagroup.com/en/news-media/highlights.html",
         instagram: "https://www.instagram.com/prada/",
         facebook: "https://www.facebook.com/Prada/",
         tiktok: "https://www.tiktok.com/@prada?lang=en",
@@ -301,6 +303,7 @@ const BRANDS_DATA = [
         name: "Hublot",
         client: ["LVMH", "Richemont"],        // 所属客户
         owner: [STAFF.D],      // 负责人
+        official_web: "https://www.hublot.com/es-es/news-events",
         instagram: "https://www.instagram.com/hublot/", 
         facebook: "https://www.facebook.com/Hublot/",
         tiktok: "https://www.tiktok.com/@hublot?lang=en",
@@ -1401,7 +1404,7 @@ const BRANDS_DATA = [
         instagram: "https://www.instagram.com/debeersofficial/",
         facebook: "https://www.facebook.com/DeBeers",
         tiktok: "https://www.tiktok.com/@debeersofficial",
-        twitter: "https://x.com/debeers",
+        twitter: {url:"https://x.com/debeers", Note:"2021-12"},
         youtube: "https://www.youtube.com/@debeers",
         linkedin: "https://www.linkedin.com/company/debeersgroup/posts/?feedView=all",
         weibo: "https://weibo.com/u/2464641902",
@@ -1960,7 +1963,7 @@ const BRANDS_DATA = [
         instagram: "https://www.instagram.com/davidyurman/",
         facebook: "https://www.facebook.com/DavidYurman",
         tiktok: "https://www.tiktok.com/@davidyurman",
-        twitter: "https://x.com/davidyurman",
+        twitter: {url:"https://x.com/davidyurman", Note:"2023-02"},
         youtube: "https://www.youtube.com/c/davidyurman",
         linkedin: "https://www.linkedin.com/company/david-yurman/posts/?feedView=all",
         weibo: {url:"https://weibo.com/u/7073234034", Note:"2024-10"},
@@ -2036,8 +2039,8 @@ const BRANDS_DATA = [
         official_web: "https://schiaparelli.com/en",
         instagram: "https://www.instagram.com/schiaparelli/",
         facebook: "https://www.facebook.com/Schiaparelli",
-        tiktok: "https://www.tiktok.com/@schiaparelli",
-        twitter: "https://x.com/Schiaparelli",
+        tiktok: {url:"https://www.tiktok.com/@schiaparelli", Note:"No Content"},
+        twitter: {url:"https://x.com/Schiaparelli", Note:"2024-11"},
         youtube: "https://www.youtube.com/@schiaparelli",
         linkedin: "https://www.linkedin.com/company/elsa-schiaparelli-sas/posts/?feedView=all",
         weibo: "https://weibo.com/u/7947860420",
