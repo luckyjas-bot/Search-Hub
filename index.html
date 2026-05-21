@@ -29,13 +29,28 @@
 
         .search-section { text-align: center; margin-bottom: 40px; }
         
+        /* 修改：核心排版调整为垂直两行 */
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px; /* 两行之间的上下间距 */
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 每一行的包裹容器 */
+        .filter-row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .filter-group select {
-            /* 1. 清除浏览器默认的下拉箭头 */
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
-
-            /* 2. 右侧(40px)要留够，否则文字会和新箭头重叠 */
             padding: 12px 40px 12px 20px;
             border-radius: 25px;
             border: 1px solid rgba(0,0,0,0.05);
@@ -44,22 +59,15 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 14px;
             outline: none;
-
-            /* 3. 使用 SVG 自定义箭头图标 */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            
-            /* 4. right 20px 表示距离右边框 20 像素 */
             background-position: right 20px center; 
             background-size: 12px;
         }
 
-        /* 兼容 IE 的小细节 */
-        .filter-group select::-ms-expand {
-            display: none;
-        }
+        .filter-group select::-ms-expand { display: none; }
 
-        #searchInput, select {
+        #searchInput {
             font-family: 'Montserrat', sans-serif;
             padding: 12px 20px;
             border-radius: 25px;
@@ -67,9 +75,40 @@
             background: white;
             outline: none;
             font-size: 14px;
+            width: 300px;
         }
 
-        #searchInput { width: 300px; }
+        .date-picker-ui {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 11px 16px;
+            border-radius: 25px;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            outline: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .date-picker-ui::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+
+        .google-search-btn {
+            background: #c8b793;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .google-search-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.03);
+        }
 
         .brand-container {
             background: white;
@@ -77,14 +116,13 @@
             max-width: 900px;
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            overflow: visible; /* 必须是 visible 否则弹出菜单会被遮挡 */
+            overflow: visible;
         }
 
         .brand-row {
             display: flex;
             align-items: center;
             padding: 10px 20px;
-            border-bottom: none;
         }
 
         .brand-name { 
@@ -92,21 +130,23 @@
             font-weight: 600;
             font-size: 1.1rem;
             flex-shrink: 0;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .brand-name:hover {
+            color: #b87a3d;
+            text-decoration: underline;
         }
 
-        /* 图标组容器 */
         .social-icons {
             display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;      /* 强制不换行 */
             align-items: center;
-            gap: 30px;              /* 控制图标之间的均匀间距 */
+            gap: 30px;              
             justify-content: center;
         }
 
-        /* 核心交互 CSS */
         .icon-cell {
-            position: relative; /* 为弹出菜单提供定位参考 */
+            position: relative; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -121,16 +161,12 @@
             transition: transform 0.2s;
         }
 
-        .social-icon-img:hover {
-            transform: scale(1.2);
-        }
+        .social-icon-img:hover { transform: scale(1.2); }
 
-        /* 分层弹出菜单 */
         .region-menu {
-            display: flex; /* 平时隐藏 */
+            display: flex; 
             opacity: 0;
             visibility: hidden;
-
             position: absolute;
             top: 100%; 
             left: 50%;
@@ -140,19 +176,23 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.25);
             padding: 12px;
             z-index: 100;
-
-            margin-top: 0px;
-            padding-top: 18px;
-
-            transition: opacity 0.3s ease 0.3s, visibility 0s linear 0.3s;
-            
-            /* 关键修改：改为垂直布局，容纳多行内容 */
+            margin-top: 10px; 
+            transition: opacity 0.3s ease 0.3s, visibility 0s linear 0.3s; 
             flex-direction: column; 
             gap: 8px;
-            min-width: 140px; /* 稍微加宽一点，放下 Primary 字样 */
+            min-width: 140px; 
         }
 
-        /* 鼠标悬停显示 */
+        .region-menu::after {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: transparent;
+        }
+
         .icon-cell:hover .region-menu,
         .region-menu:hover {
             opacity: 1;
@@ -160,19 +200,18 @@
             transition-delay: 0s; 
         }
 
-        /* 菜单顶部的装饰小箭头 */
         .region-menu::before {
             content: "";
             position: absolute;
-            top: 10px;
+            top: -8px;
             left: 50%;
             transform: translateX(-50%);
             border-left: 8px solid transparent;
             border-right: 8px solid transparent;
             border-bottom: 8px solid white;
+            z-index: 101;
         }
 
-        /* 每一行的容器样式 */
         .menu-row {
             display: flex;
             align-items: flex-start;
@@ -180,19 +219,19 @@
             width: 100%;
         }
 
-        /* 侧边标签文字样式（Primary / Others） */
         .row-label {
-            padding-top: 5px; /* 让标签跟图标对齐 */
+            padding-top: 5px; 
             font-size: 10px;
             font-weight: 800;
-            color: #bbb; /* 浅灰色，不抢戏 */
+            color: #bbb; 
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            width: 55px; /* 固定宽度确保右侧图标对齐 */
+            width: 65px;         /* 稍微加宽到 65px，给 OTHERS 留足空间 */
+            text-align: left;    /* 强制左对齐 */
             flex-shrink: 0;
+            display: inline-block;
         }
 
-        /* 行与行之间的分割线 */
         .menu-divider {
             height: 1px;
             background-color: #f0f0f0;
@@ -200,7 +239,6 @@
             width: 100%;
         }
 
-        /* 国旗图标按钮 */
         .region-btn {
             font-size: 20px;
             text-decoration: none;
@@ -208,11 +246,8 @@
             cursor: pointer;
         }
 
-        .region-btn:hover {
-            transform: scale(1.3);
-        }
+        .region-btn:hover { transform: scale(1.3); }
 
-        /* 底部 OPEN ALL 按钮的特殊样式 */
         .open-all-btn {
             font-size: 10px;
             font-weight: 800;
@@ -224,28 +259,19 @@
             transition: color 0.2s;
         }
 
-        .open-all-btn:hover {
-            color: #b87a3d;
-        }
+        .open-all-btn:hover { color: #b87a3d; }
 
-        /* 无账号状态的容器 */
         .icon-cell.disabled-state {
             cursor: not-allowed;
-            opacity: 0.25; /* 降低透明度，使其看起来是虚的 */
+            opacity: 0.25; 
         }
 
-        /* 强制图标变灰 */
         .grayscale-icon {
             filter: grayscale(100%);
             transition: none !important;
         }
 
-        /* 确保禁用的图标在悬停时不放大 */
-        .icon-cell.disabled-state:hover .social-icon-img {
-            transform: none;
-        }
-        .empty-placeholder { color: #eee; font-size: 14px; }
-
+        .icon-cell.disabled-state:hover .social-icon-img { transform: none; }
     </style>
 </head>
 <body>
@@ -253,9 +279,17 @@
     <div class="search-section">
         <h1 id="ui-title">SEARCH FILTER</h1>
         <div class="filter-group">
-            <input type="text" id="searchInput" placeholder="Search brands..." onkeyup="renderBrands()">
-            <select id="ownerFilter" onchange="renderBrands()"><option value="">All Owners</option></select>
-            <select id="clientFilter" onchange="renderBrands()"><option value="">All Clients</option></select>
+            <div class="filter-row">
+                <input type="text" id="searchInput" placeholder="Search brands..." onkeyup="renderBrands()">
+                <select id="ownerFilter" onchange="renderBrands()"><option value="">All Owners</option></select>
+                <select id="clientFilter" onchange="renderBrands()"><option value="">All Clients</option></select>
+            </div>
+            
+            <div class="filter-row">
+                <input type="date" id="search-start-date" class="date-picker-ui">
+                <input type="date" id="search-end-date" class="date-picker-ui">
+                <button onclick="triggerGoogleSearch()" class="google-search-btn">GOOGLE</button>
+            </div>
         </div>
     </div>
 
@@ -264,11 +298,67 @@
     <script src="data.js"></script>
 
     <script>
-        // 一键打开所有链接的函数
+        const PLATFORMS = ['official_web', 'instagram', 'linkedin', 'tiktok', 'twitter', 'facebook', 'youtube', 'weibo', 'Xiaohongshu'];
+
+        const FLAGS = { 
+            "Official": "🌍", "Fragrance": "💄", "Global": "🌍", "UK": "🇬🇧", "Japan": "🇯🇵", "Germany": "🇩🇪", "France": "🇫🇷", "China": "🇨🇳", "USA": "🇺🇸", "Qatar": "🇶🇦", "UAE": "🇦🇪", "Belgium": "🇧🇪",
+            "Spain": "🇪🇸", "Australia": "🇦🇺", "Taiwan": "🇨🇳", "Croatia": "🇭🇷", "Serbia": "🇷🇸","Hong Kong": "🇭🇰", "Turkey": "🇹🇷", "Colombia": "🇨🇴", "Netherlands": "🇳🇱", "Thailand": "🇹🇭", "Philippines": "🇵🇭", "India": "🇮🇳", "Korea": "🇰🇷", "Singapore": "🇸🇬", "Mexico": "🇲🇽", "Middle East": "🐫", "Ireland": "🇮🇪",
+            "Canada": "🇨🇦", "New Zealand": "🇳🇿", "Puerto Rico":"🇵🇷", "Hawaii": "🏝️", "Italy": "🇮🇹", "Greece": "🇬🇷", "Malaysia": "🇲🇾", "Indonesia": "🇮🇩", "Switzerland": "🇨🇭", "Portugal": "🇵🇹", "Brazil": "🇧🇷", "Vietnam": "🇻🇳", "Argentina": "🇦🇷", "Poland": "🇵🇱", "Romania": "🇷🇴", "Czechia": "🇨🇿","Peru": "🇵🇪","Kazakhstan": "🇰🇿","Panama": "🇵🇦","Israel": "🇮🇱",
+            "Kids": "👧", "Men": "👨"
+        };
+
         function openAllLinks(linksJson) {
             const links = JSON.parse(decodeURIComponent(linksJson));
-            links.forEach(item => {
-                window.open(item.url, '_blank');
+            links.forEach(item => window.open(item.url, '_blank'));
+        }
+
+        function openMainLinks(brandName) {
+            if (typeof BRANDS_DATA === 'undefined') return;
+            const brand = BRANDS_DATA.find(b => b.name === brandName);
+            if (!brand) return;
+
+            PLATFORMS.forEach(platform => {
+                const data = brand[platform] || brand[platform === 'twitter' ? 'x' : ''];
+                if (!data) return;
+
+                let urlToOpen = null;
+                if (Array.isArray(data)) {
+                    if (data.length > 0) urlToOpen = data[0].url;
+                } else if (typeof data === 'object' && data.url) {
+                    urlToOpen = data.url;
+                } else if (typeof data === 'string') {
+                    urlToOpen = data;
+                }
+
+                if (urlToOpen) window.open(urlToOpen, '_blank');
+            });
+        }
+
+        function triggerGoogleSearch() {
+            const brandName = document.getElementById('searchInput').value.trim();
+            if (!brandName) {
+                alert('Please enter a brand name in the search box first!');
+                return;
+            }
+
+            const startDate = document.getElementById('search-start-date').value;
+            const endDate = document.getElementById('search-end-date').value;
+
+            const keywords = [
+                `"${brandName} pop up"`,
+                `"${brandName} event"`,
+                `"${brandName} new store opening"`,
+                `"${brandName} exhibition"`,
+                `"${brandName} new product"`
+            ];
+
+            keywords.forEach(query => {
+                let finalQuery = query;
+                if (startDate) finalQuery += ` after:${startDate}`;
+                if (endDate) finalQuery += ` before:${endDate}`;
+
+                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(finalQuery)}`;
+                window.open(searchUrl, '_blank');
             });
         }
 
@@ -285,26 +375,16 @@
             }
             const ownerSelect = document.getElementById('ownerFilter');
             const clientSelect = document.getElementById('clientFilter');
+            
             Array.from(owners).sort().forEach(o => {
-                const opt = document.createElement('option');
-                opt.value = o; opt.innerText = o;
-                ownerSelect.appendChild(opt);
+                ownerSelect.options[ownerSelect.options.length] = new Option(o, o);
             });
             Array.from(clients).sort().forEach(c => {
-                const opt = document.createElement('option');
-                opt.value = c; opt.innerText = c;
-                clientSelect.appendChild(opt);
+                clientSelect.options[clientSelect.options.length] = new Option(c, c);
             });
         }
 
         function renderIcon(platformData, iconUrl, platformName) {
-            const flags = { "Official": "🌍", "Fragrance": "💄", "Global": "🌍", "UK": "🇬🇧", "Japan": "🇯🇵", "Germany": "🇩🇪", "France": "🇫🇷", "China": "🇨🇳", "USA": "🇺🇸", "Qatar": "🇶🇦", "UAE": "🇦🇪", "Belgium": "🇧🇪",
-            "Spain": "🇪🇸", "Australia": "🇦🇺", "Taiwan": "🇨🇳", "Croatia": "🇭🇷", "Serbia": "🇷🇸","Hong Kong": "🇭🇰", "Turkey": "🇹🇷", "Colombia": "🇨🇴", "Netherlands": "🇳🇱", "Thailand": "🇹🇭", "Philippines": "🇵🇭", "France": "🇫🇷", "India": "🇮🇳", "Korea": "🇰🇷", "Singapore": "🇸🇬", "Mexico": "🇲🇽", "Middle East": "🐫", "Ireland": "🇮🇪",
-            "Canada": "🇨🇦", "New Zealand": "🇳🇿", "Puerto Rico":"🇵🇷", "Hawaii": "🏝️", "Italy": "🇮🇹", "Greece": "🇬🇷", "Malaysia": "🇲🇾", "Indonesia": "🇮🇩", "Switzerland": "🇨🇭", "Portugal": "🇵🇹", "Brazil": "🇧🇷", "Vietnam": "🇻🇳", "Argentina": "🇦🇷", "Poland": "🇵🇱", "Romania": "🇷🇴", "Czechia": "🇨🇿","Peru": "🇵🇪","Kazakhstan": "🇰🇿","Panama": "🇵🇦","Israel": "🇮🇱",
-            "Kids": "👧", "Men": "👨"
-        };
-
-            // 1. 处理无账号状态 ---
             if (!platformData || (Array.isArray(platformData) && platformData.length === 0)) {
                 return `
                     <div class="icon-cell disabled-state" title="${platformName || ''} not available">
@@ -313,18 +393,15 @@
                 `;
             }
 
-            // 2. 多区域数组渲染 ---
             if (Array.isArray(platformData)) {
                 const priorityList = platformData.filter(item => item.priority === true);
                 const secondaryList = platformData.filter(item => item.priority !== true);
                 const encodedLinks = encodeURIComponent(JSON.stringify(platformData));
 
-            // 辅助内部函数增加 subLogo 判断
                 const renderRowItems = (list) => list.map(item => {
-                    // 判断是显示图片还是显示 Flag
-                const iconContent = item.subLogo 
-                    ? `<img src="${item.subLogo}" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; vertical-align: -5px; margin-top: -2px;">` 
-                    : (flags[item.region] || '🌐');
+                    const iconContent = item.subLogo 
+                        ? `<img src="${item.subLogo}" style="width: 22px; height: 22px; border-radius: 50%; object-fit: cover; vertical-align: -5px; margin-top: -2px;">` 
+                        : (FLAGS[item.region] || '🌐');
                     return `
                         <div style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
                             <a href="${item.url}" target="_blank" class="region-btn" title="${item.region}">
@@ -339,17 +416,14 @@
                     <div class="icon-cell">
                         <img src="${iconUrl}" class="social-icon-img">
                         <div class="region-menu">
-                            
                             <div class="menu-row" style="justify-content: center; padding-bottom: 4px;">
                                 <a class="open-all-btn" onclick="openAllLinks('${encodedLinks}')">🚀 OPEN ALL</a>
                             </div>
                             <div class="menu-divider"></div>
-
                             <div class="menu-row">
                                 <span class="row-label">Primary</span>
-                                <div style="display: flex; gap: 12px;">${renderRowItems(priorityList)}</div>
+                                <div style="display: flex; gap: 12px; align-items: flex-start;">${renderRowItems(priorityList)}</div>
                             </div>
-                            
                             ${secondaryList.length > 0 ? `
                                 <div class="menu-divider"></div>
                                 <div class="menu-row">
@@ -357,12 +431,11 @@
                                     <div style="display: flex; gap: 12px;">${renderRowItems(secondaryList)}</div>
                                 </div>
                             ` : ''}
-
                         </div>
                     </div>                
                 `;
             }
-                // 3. 单账号处理 (支持对象带日期 或 纯字符串) ---
+
             const url = typeof platformData === 'object' ? platformData.url : platformData;
             const date = typeof platformData === 'object' ? platformData.Note : null;
 
@@ -394,7 +467,7 @@
                         const row = document.createElement('div');
                         row.className = 'brand-row';
                         row.innerHTML = `
-                            <div class="brand-name">${brand.name}</div>
+                            <div class="brand-name" onclick="openMainLinks('${brand.name.replace(/'/g, "\\'")}')" title="Click to open all primary links">${brand.name}</div>
                             <div class="social-icons">
                                 ${renderIcon(brand.official_web, "https://cdn-icons-png.flaticon.com/512/1006/1006771.png")}
                                 ${renderIcon(brand.instagram, "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg")}

@@ -239,11 +239,11 @@ const BRANDS_DATA = [
         youtube: "https://www.youtube.com/@bvlgariofficial",
         linkedin: "https://www.linkedin.com/company/bottega-veneta/posts/?feedView=all",
         weibo: [              
-            { url: "https://weibo.com/bulgari", Note: "Official", region: "Official", priority: true },                              
+            { url: "https://weibo.com/bulgari", Note: "Main", region: "Global", priority: true },                              
             { url: "https://weibo.com/u/6418607905", Note: "Fragrance", region: "Fragrance", priority: true },  
             ],
         Xiaohongshu: [              
-            { url: "https://www.xiaohongshu.com/user/profile/5ea953c20000000001009739", Note: "Official", region: "Official", priority: true },                              
+            { url: "https://www.xiaohongshu.com/user/profile/5ea953c20000000001009739", Note: "Main", region: "Global", priority: true },                              
             { url: "https://www.xiaohongshu.com/user/profile/5572845a62a60c08c19841bf?xsec_token=ABQ4GLOK7EiGReUxevAGPM-w37B3se1ln-YQKlt1aMqbE%3D&xsec_source=pc_search", Note: "Fragrance", region: "Fragrance", priority: true },  
             ]
     },
@@ -384,8 +384,8 @@ const BRANDS_DATA = [
         client: ["LVMH", "Richemont"],        // 所属客户
         owner: [STAFF.D],      // 负责人
         instagram: [
-            {url:"https://www.instagram.com/chaumetofficial/", Note:"Global"},
-            {url:"https://www.instagram.com/chaumet_arabia", Note:"UAE"},
+            {url:"https://www.instagram.com/chaumetofficial/", region:"Global", priority:true},
+            {url:"https://www.instagram.com/chaumet_arabia", region:"UAE", priority:true},
             ],
         facebook: "https://www.facebook.com/chaumet.fr",
         tiktok: "https://www.tiktok.com/@chaumet?lang=en",
@@ -487,7 +487,7 @@ const BRANDS_DATA = [
         owner: [STAFF.C],
         official_web: "https://www.tudorwatch.com/fr",     
         instagram: [
-            { url:"https://www.instagram.com/nordstrom/",region : "Global", Note: "Official"},
+            { url:"https://www.instagram.com/nordstrom/",region : "Global", Note: "Main"},
             { url:"https://www.instagram.com/nordstromalamoana/",region:"USA", Note: "Ala Moana"},
             { url:"https://www.instagram.com/nordstromscp/",region:"USA", Note: "South Coast Plaza"},
             { url:"https://www.instagram.com/nordstromnyc/",region:"USA", Note: "New York"},
@@ -679,7 +679,7 @@ const BRANDS_DATA = [
         weibo: "https://weibo.com/u/5813004880",
         Xiaohongshu: [
             {url:"https://xhslink.com/m/6957k0S4BKS", Note:"Fashion", priority:true},
-            {url:"https://www.xiaohongshu.com/user/profile/681c8ec8000000000d00ab66?xsec_token=ABvAq0JIh9sWvtB0cgXkLhVpOdMRZHWodSg93gWq6mt68=&xsec_source=pc_search", Note:"Beauty", priority:true}
+            {url:"https://www.xiaohongshu.com/user/profile/681c8ec8000000000d00ab66?xsec_token=ABvAq0JIh9sWvtB0cgXkLhVpOdMRZHWodSg93gWq6mt68=&xsec_source=pc_search", region:"Fragrance", Note:"Fragrance", priority:true}
             ]
     },
     {
@@ -1390,7 +1390,7 @@ const BRANDS_DATA = [
         instagram: "https://www.instagram.com/skims/",
         facebook: "https://www.facebook.com/SKIMSbody/",
         tiktok: "https://www.tiktok.com/@skims",
-        twitter: "https://www.tiktok.com/@skims?lang=fr",
+        twitter: "https://x.com/skims",
         youtube: "https://www.youtube.com/c/skims",
         linkedin: null,
         weibo: null,
@@ -1909,7 +1909,7 @@ const BRANDS_DATA = [
         official_web: "https://www.hugoboss.com/fr/home",
         instagram: [
             {url: "https://www.instagram.com/boss/", priority: true},
-            {url: "https://www.instagram.com/luxuryfashion.g/", Note:"fashion"},
+            {url: "https://www.instagram.com/luxuryfashion.g/", region:"Argentina"},
         ],
         facebook: "https://www.facebook.com/hugoboss",
         tiktok: "https://www.tiktok.com/@boss",
@@ -2505,6 +2505,80 @@ const BRANDS_DATA = [
         linkedin: "https://www.linkedin.com/company/tudor-watch/posts/?feedView=all",
         weibo: "https://weibo.com/tudor",
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/565aa4dc0cdc2b6461f8ba92"
+    },
+    {
+        name: "Mikimoto",
+        client: ["Richemont"],
+        owner: [STAFF.C],
+        official_web: null, 
+        instagram: "https://www.instagram.com/official_mikimoto/",
+        linkedin: "https://www.linkedin.com/company/mikimoto/",
+        tiktok: null,
+        twitter: "https://x.com/Mikimoto_US",
+        facebook: "https://www.facebook.com/MIKIMOTO.france/?brand_redir=57401469317#",
+        youtube: "https://www.youtube.com/user/mikimotoofficial",
+        weibo: "https://weibo.com/u/1913756042",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/606ecb0500000000010096f9?xsec_token=AB62XHhNC-yIclP1vLYxtsm1-EPrqzs_a44awmVenpbNQ%3D&xsec_source=pc_search"
+    },
+    {
+        name: "ALO YOGA",
+        client: ["Chanel Fashion"],
+        owner: [STAFF.C],
+        official_web: null,
+        instagram: "https://www.instagram.com/aloyoga/",
+        linkedin: null,
+        tiktok: "https://www.tiktok.com/@alo?lang=en",
+        twitter: "https://x.com/aloyoga",
+        facebook: "https://www.facebook.com/aloclothing",
+        youtube: "https://www.youtube.com/@Aloyoga",
+        weibo: null,
+        Xiaohongshu: null
+    },
+    {
+        name: "Cle de Peau",
+        client: ["LVMH", "Chanel Beauty"],
+        owner: [STAFF.F],
+        official_web: null,
+        instagram: "https://www.instagram.com/cledepeaubeaute/",
+        linkedin: null,
+        tiktok: "https://www.tiktok.com/@cledepeaubeaute",
+        twitter: null,
+        facebook: "https://www.facebook.com/cledepeaubeauteofficial",
+        youtube: "https://www.youtube.com/@cledepeaubeaute3317",
+        weibo: "https://weibo.com/u/3786387280",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5c08f7f1000000000701bee2?xsec_token=ABHPWKzQhEoKeD8G6Raw7QsB24YLP7O7REjJJQd3btKSs%3D&xsec_source=pc_search"
+    },
+    {
+        name: "Helena Rubinstein",
+        client: ["Chanel Beauty"],
+        owner: [STAFF.D],
+        official_web: null,
+        instagram: "https://www.instagram.com/helenarubinstein/",
+        linkedin: null,
+        tiktok: null,
+        twitter: null,
+        facebook: "https://www.facebook.com/HelenaRubinstein",
+        youtube: "https://www.youtube.com/@HRcosmetics",
+        weibo: "https://weibo.com/u/1862278082",
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/560641b4a75c952bf63d58c1?xsec_token=ABMNIlyFD2hHQb8sq2Du-I2kbi4tcHpA0U9pNN0YODDTA%3D&xsec_source=pc_search"
+    },
+    {
+        name: "Salvatore Ferragamo",
+        client: ["Richemont"],
+        owner: [STAFF.F],
+        official_web: null,
+        instagram: "https://www.instagram.com/ferragamo/",
+        linkedin: "https://www.linkedin.com/company/salvatore-ferragamo/posts/?feedView=all",
+        tiktok: "https://www.tiktok.com/@ferragamo",
+        twitter: "https://x.com/Ferragamo",
+        facebook: "https://www.facebook.com/FERRAGAMO/",
+        youtube: "https://www.youtube.com/user/FerragamoOfficial",
+        weibo: "https://weibo.com/u/2133330900",
+        Xiaohongshu: [
+            {url: "https://www.xiaohongshu.com/user/profile/5d66039a000000000101a314?xsec_token=AB-gGMevIvHsZeDHCkikSxYgjUT0fshfWTgjloIlydwUk%3D&xsec_source=pc_search", priority: true, Note: "Main"},
+            {url: "https://www.xiaohongshu.com/user/profile/61497ec60000000002020635?xsec_token=ABSpC7Njpi99MT2nQ0S7TAwnYRJIdkvjcR0DTSyEiNyGw%3D&xsec_source=pc_search", priority: false, Note: "Watch"},
+            {url: "https://www.xiaohongshu.com/user/profile/61fe8885000000001000587e?xsec_token=ABAaTpxK6dkODLMYL73dZaeDkadZ4p2nxf8UgP9mXS7Wc%3D&xsec_source=pc_search", priority: false, Note: "Beauty"}
+            ]
     },
 ];
 
