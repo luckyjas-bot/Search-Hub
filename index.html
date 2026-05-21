@@ -341,23 +341,34 @@
                 return;
             }
 
-            const startDate = document.getElementById('search-start-date').value;
-            const endDate = document.getElementById('search-end-date').value;
+            const startDate = document.getElementById('search-start-date').value; // 格式: YYYY-MM-DD
+            const endDate = document.getElementById('search-end-date').value;     // 格式: YYYY-MM-DD
 
             const keywords = [
-                `"${brandName} pop up"`,
-                `"${brandName} event"`,
-                `"${brandName} new store opening"`,
-                `"${brandName} exhibition"`,
-                `"${brandName} new product"`
+                `${brandName} pop up`,
+                `${brandName} event`,
+                `${brandName} new store opening`,
+                `${brandName} exhibition`,
+                `${brandName} new product`
             ];
 
-            keywords.forEach(query => {
-                let finalQuery = query;
-                if (startDate) finalQuery += ` after:${startDate}`;
-                if (endDate) finalQuery += ` before:${endDate}`;
+            // 将 YYYY-MM-DD 转换为 Google 接收的 MM/DD/YYYY 格式
+            const formatGoogleDate = (dateStr) => {
+                if (!dateStr) return '';
+                const [year, month, day] = dateStr.split('-');
+                return `${month}/${day}/${year}`;
+            };
 
-                const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(finalQuery)}`;
+            keywords.forEach(query => {
+                let searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                
+                // 如果用户选择了时间，通过 Google 原生工具栏参数进行绑定
+                if (startDate || endDate) {
+                    const minDate = formatGoogleDate(startDate);
+                    const maxDate = formatGoogleDate(endDate);
+                    searchUrl += `&tbs=cdr:1,cd_min:${minDate},cd_max:${maxDate}`;
+                }
+
                 window.open(searchUrl, '_blank');
             });
         }
