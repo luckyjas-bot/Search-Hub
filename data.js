@@ -1713,7 +1713,7 @@ const BRANDS_DATA = [
         facebook: "https://www.facebook.com/franciskurkdjian",
         tiktok: "https://www.tiktok.com/@maisonfranciskurkdjian?lang=en",
         twitter: null,
-        youtube: "https://www.youtube.com/@MaisonFrancisKurkdjianParis",
+        youtube: "https://www.youtube.com/channel/UCTj44UFzFZXrvFhY_N84xRA",
         linkedin: "https://www.linkedin.com/company/parfum-francis-kurkdjian/posts/?feedView=all",
         weibo: "https://weibo.com/mfkparis",
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/606ae4d40000000001002302"
