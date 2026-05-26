@@ -1625,14 +1625,14 @@ const BRANDS_DATA = [
         client: ["Puig"],
         owner: [STAFF.E],
         official_web: { url: "https://www.fredericmalle.eu/fr-e-uf/", Note: "France" },
-        instagram: null,
-        facebook: null,
+        instagram: "https://www.instagram.com/fredericmalle/",
+        facebook: "https://www.facebook.com/FredericMalle",
         tiktok: null,
         twitter: null,
-        youtube: null,
-        linkedin: null,
+        youtube: "https://www.youtube.com/@FredericMalle",
+        linkedin: "https://www.linkedin.com/company/fredericmalle/",
         weibo: "https://weibo.com/u/7439443251",
-        Xiaohongshu: null
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5b95ed746b58b77cdc960015"
     },
     {
         name: "Diptyque",
