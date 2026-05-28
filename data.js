@@ -102,7 +102,8 @@ const BRANDS_DATA = [
     {
         name: "Vacheron Constantin",
         client: ["LVMH", "Richemont"],        // 所属客户
-        owner: [STAFF.D],      // 负责人
+        owner: [STAFF.D],
+        official_web: "https://presslounge.vacheron-constantin.com/",     
         instagram: "https://www.instagram.com/vacheronconstantin/",
         facebook: "https://www.facebook.com/vacheronconstantin/",
         tiktok: "https://www.tiktok.com/@vacheronconstantin",
@@ -237,7 +238,7 @@ const BRANDS_DATA = [
         tiktok: "https://www.tiktok.com/@bvlgari?lang=en",
         twitter: { url: "https://x.com/Bulgariofficial", Note: "2025-03" },
         youtube: "https://www.youtube.com/@bvlgariofficial",
-        linkedin: "https://www.linkedin.com/company/bottega-veneta/posts/?feedView=all",
+        linkedin: "https://www.linkedin.com/company/bulgari/posts/?feedView=all",
         weibo: [              
             { url: "https://weibo.com/bulgari", Note: "Main", region: "Global", priority: true },                              
             { url: "https://weibo.com/u/6418607905", Note: "Fragrance", region: "Fragrance", priority: true },  
@@ -275,8 +276,9 @@ const BRANDS_DATA = [
     },
     {
         name: "Rolex",
-        client: ["LVMH", "Chanel Fashion", "Richemont"],        // 所属客户
-        owner: [STAFF.D],      // 负责人
+        client: ["LVMH", "Chanel Fashion", "Richemont"],        
+        owner: [STAFF.D],    
+        official_web: "https://newsroom.rolex.com/zh-hans",     
         instagram: "https://www.instagram.com/rolex/", 
         facebook: "https://www.facebook.com/rolex/",
         tiktok: {url: "https://www.tiktok.com/@rolex?lang=en", Note: "no content"},
@@ -323,7 +325,7 @@ const BRANDS_DATA = [
         tiktok: "https://www.tiktok.com/@vancleefarpels",
         twitter: { url: "https://x.com/vancleefarpels", Note: "2024-05"},
         youtube: "https://www.youtube.com/@vancleefarpels/videos",
-        linkedin: "https://www.linkedin.com/company/cartier/posts/?feedView=all",
+        linkedin: "https://www.linkedin.com/company/van-cleef-&-arpels/posts/?feedView=all",
         weibo: "https://weibo.com/u/2653491890",
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/584bab8d82ec39206c07264c"
     },
@@ -346,7 +348,7 @@ const BRANDS_DATA = [
         owner: [STAFF.D],      // 负责人
         instagram: "https://www.instagram.com/graff/", 
         facebook: "https://www.facebook.com/graff/",
-        tiktok: "https://www.tiktok.com/@graffdiamonds",
+        tiktok: null,
         twitter: null,
         youtube: "https://www.youtube.com/@graff/videos",
         linkedin: "https://www.linkedin.com/company/graff/posts/?feedView=all",
@@ -419,7 +421,7 @@ const BRANDS_DATA = [
         youtube: "https://www.youtube.com/@berluti/videos",
         linkedin: "https://www.linkedin.com/company/berluti/",
         weibo: "https://weibo.com/berlutiofficial",
-        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/59929283e8ac2b568393e155"
+        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/5f62d4f5000000000100b6e9?xsec_token=AB6jWo_2vS0cN0dykqC2iVLwgyLT3Y7Fz8flfaRoAVQWs%3D&xsec_source=pc_search"
     },
     {
         name: "Ulta Beauty",
