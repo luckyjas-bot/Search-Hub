@@ -801,7 +801,10 @@ const BRANDS_DATA = [
         name: "Marc Jacobs Beauty",
         client: ["LVMH"],
         owner: [STAFF.F],
-        instagram: "https://www.instagram.com/marcjacobsfragrances",
+        instagram: [
+            {url:"https://www.instagram.com/marcjacobsfragrances", Note:"Fragrance", priority: true},
+            {url:"https://www.instagram.com/marcjacobsbeauty/", Note:"Beauty", priority: true},
+            ],
         facebook: "https://www.facebook.com/MarcJacobsFragrances",
         tiktok: "https://www.tiktok.com/@marcjacobsfragrances",
         twitter: null,
