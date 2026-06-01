@@ -2497,20 +2497,7 @@ const BRANDS_DATA = [
         weibo: "https://weibo.com/u/1862278082",
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/560641b4a75c952bf63d58c1"
     },
-    {
-        name: "Tudor",
-        client: ["LVMH","Richemont"],
-        owner: [STAFF.F],
-        official_web: "https://www.tudorwatch.com/fr",
-        instagram: "https://www.instagram.com/tudorwatch/",
-        facebook: "https://www.facebook.com/tudorwatch/",
-        tiktok: "https://www.tiktok.com/@tudorwatch",
-        twitter: null,
-        youtube: "https://www.youtube.com/user/TudorWatch",
-        linkedin: "https://www.linkedin.com/company/tudor-watch/posts/?feedView=all",
-        weibo: "https://weibo.com/tudor",
-        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/565aa4dc0cdc2b6461f8ba92"
-    },
+    
     {
         name: "Mikimoto",
         client: ["Richemont"],
