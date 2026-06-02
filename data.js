@@ -2483,20 +2483,6 @@ const BRANDS_DATA = [
         weibo: null,
         Xiaohongshu: "https://www.xiaohongshu.com/user/profile/68859922000000000d03d3a3"
     },
-    {
-        name: "Helena Rubinstein",
-        client: ["Chanel Beauty"],
-        owner: [STAFF.D],
-        official_web: null,
-        instagram: "https://www.instagram.com/helenarubinstein/",
-        facebook: null,
-        tiktok: null,
-        twitter: null,
-        youtube: null,
-        linkedin: null,
-        weibo: "https://weibo.com/u/1862278082",
-        Xiaohongshu: "https://www.xiaohongshu.com/user/profile/560641b4a75c952bf63d58c1"
-    },
     
     {
         name: "Mikimoto",
