@@ -2473,7 +2473,7 @@ const BRANDS_DATA = [
         name: "Vhernier",
         client: ["Richemont"],
         owner: [STAFF.D],
-        official_web: null,
+        official_web: "https://www.vhernier.com/en-fr",
         instagram: "https://www.instagram.com/vhernier/",
         facebook: "https://www.facebook.com/Vhernier",
         tiktok: null,
